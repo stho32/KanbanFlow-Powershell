@@ -81,7 +81,7 @@ function Get-TasksFlat {
     $tasks = Get-Tasks $ApiToken
     $tasks | 
         Where-Object columnName -in $Columns | 
-        Select tasks | % {
+        Select-Object tasks | % {
             if ($_.tasks -ne $null) {
                 $_.tasks | ForEach-Object {
                     $result += ,$_
@@ -89,7 +89,7 @@ function Get-TasksFlat {
             } 
         }
     
-    return $result
+    return @( $result )
 }
 
 # Exports for the module
