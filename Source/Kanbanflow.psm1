@@ -2,12 +2,11 @@
 .Synopsis
     Get Kanbanflow Board
 .DESCRIPTION
-    Gets all information for a kanbanflow board
-    
+    Gets all information for a kanbanflow board which means 
+    that you get color and structure information but you do 
+    not get the task info. 
 .EXAMPLE
-    Example how to use this cmdlet
-.EXAMPLE
-    Another example
+    Get-KFBoard
 #>
 function Get-Board {
     [CmdletBinding()]
@@ -15,28 +14,23 @@ function Get-Board {
         [Parameter(Mandatory=$true)]
         [string]$ApiToken
     )
-    
-    begin {
-    }
-    
-    process {
-        Invoke-RestMethod -Uri https://kanbanflow.com/api/v1/board?apiToken=$ApiToken
-    }
-    
-    end {
-    }
+
+    Invoke-RestMethod -Uri https://kanbanflow.com/api/v1/board?apiToken=$ApiToken
 }
 
 <#
 .Synopsis
     Get all Tasks from a kanban board
 .DESCRIPTION
-    Gets all tasks for a kanbanflow board
+    Gets all tasks for a kanbanflow board the 
+    kanbanflow way. So each column is an object
+    which in turn contains an array of tasks.
+
+    If you want the tasks in a flat array without
+    column information use "Get-TasksFlat" instead.
     
 .EXAMPLE
-    Example how to use this cmdlet
-.EXAMPLE
-    Another example
+    Get-Tasks
 #>
 function Get-Tasks {
     [CmdletBinding()]
@@ -45,15 +39,7 @@ function Get-Tasks {
         [string]$ApiToken
     )
     
-    begin {
-    }
-    
-    process {
-        Invoke-RestMethod -Uri https://kanbanflow.com/api/v1/tasks?apiToken=$ApiToken
-    }
-    
-    end {
-    }
+    Invoke-RestMethod -Uri https://kanbanflow.com/api/v1/tasks?apiToken=$ApiToken
 }
 
 <#
@@ -63,10 +49,16 @@ function Get-Tasks {
 .DESCRIPTION
     Gets all tasks for a kanbanflow board
     
+    Requesting the api directly would give you a structure where 
+    every column is a seperate nested array. 
+
+    With this function you basically say what columns you want to "select" and all tasks
+    that are contained in those are collected and passed to you as an array.
+    Which is much better suited for analysis.
+
 .EXAMPLE
-    Example how to use this cmdlet
-.EXAMPLE
-    Another example
+    Get-TasksFlat -ApiToken "..." -Columns "To-Do","Doing"
+
 #>
 function Get-TasksFlat {
     [CmdletBinding()]
@@ -94,15 +86,13 @@ function Get-TasksFlat {
 
 <#
 .Synopsis
-    Get all Tasks from a kanban board - but not nested within 
-    columns
+    Update the name of a task
+
 .DESCRIPTION
-    Gets all tasks for a kanbanflow board
+    Update a task name on a kanban board by taskId
     
 .EXAMPLE
-    Example how to use this cmdlet
-.EXAMPLE
-    Another example
+    Update-Task -ApiToken "..." -TaskId "..." -NewTaskName "New task name"
 #>
 function Update-TaskName {
     [CmdletBinding()]
