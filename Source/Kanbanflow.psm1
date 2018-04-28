@@ -105,13 +105,64 @@ function Update-TaskName {
         [string]$NewTaskName
     )
 
+    $authentication = New-KanbanflowHeaderAuth -ApiToken $ApiToken
+
+    Invoke-RestMethod -Headers $authentication `
+        -Method Post -Uri https://kanbanflow.com/api/v1/tasks/$TaskId -ContentType "application/json" -Body "{ `"name`":`"$NewTaskName`"}"
+}
+
+<#
+.SYNOPSIS
+    Create a base64 auth header for Kanbanflow authentication
+
+.DESCRIPTION
+    Kanbanflow recommends using base64 encoded authentication 
+    that is embedded within the header of requests.
+
+    This function takes in an ApiToken and generates a PSCustomObject
+    which can be passed as Header to Invoke-RestMethod.
+
+.EXAMPLE
+    $headers = New-KanbanflowAuthHeader -ApiToken "..."
+#>
+function New-KanbanflowAuthHeader {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory=$true)]
+        [string]$ApiToken
+    )
+
     $credentials = "apiToken:" + $ApiToken
     $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($credentials))
 
-    Invoke-RestMethod -Headers @{Authorization=("Basic " + $base64AuthInfo)} -Method Post -Uri https://kanbanflow.com/api/v1/tasks/$TaskId -ContentType "application/json" -Body "{ `"name`":`"$NewTaskName`"}"
+    return @{Authorization=("Basic " + $base64AuthInfo)}
+}
+
+<#
+.Synopsis
+    Get Kanbanflow Board
+.DESCRIPTION
+    Gets all information for a kanbanflow board which means 
+    that you get color and structure information but you do 
+    not get the task info. 
+.EXAMPLE
+    Get-KanbanflowBoard -ApiToken $boardApiToken
+#>
+function Get-KanbanflowBoard {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory=$true)]
+        [string]$ApiToken
+    )
+
+    $authentication = New-KanbanflowAuthHeader -ApiToken $ApiToken
+    Invoke-RestMethod -Method Get -Headers $authentication `
+        -Uri https://kanbanflow.com/api/v1/board
 }
 
 # Exports for the module
+Export-ModuleMember -Function New-KanbanflowAuthHeader
+Export-ModuleMember -Function Get-KanbanflowBoard
 Export-ModuleMember -Function Get-Board
 Export-ModuleMember -Function Get-Tasks
 Export-ModuleMember -Function Get-TasksFlat
