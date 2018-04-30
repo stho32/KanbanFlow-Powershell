@@ -24,6 +24,23 @@ Describe 'Get-KanbanflowBoard' {
     }
 }
 
+
+Describe 'Get-KanbanflowBoardColumns' {
+    It 'returns a list of the columns within the board' {
+    }
+    It 'enables all other functions to reference columns by name' {
+    }
+}
+
+Describe 'Get-KanbanflowTaskSubtasks' {}
+Describe 'Get-KanbanflowTaskLabels' {}
+Describe 'Get-KanbanflowTaskDates' {}
+Describe 'Get-KanbanflowTaskCollaborators' {}
+Describe 'Get-KanbanflowTaskComments' {}
+Describe 'Get-KanbanflowTaskAttachments' {}
+Describe 'Get-KanbanflowTaskTimeEntries' {}
+Describe 'Get-KanbanflowTaskManualTimeEntries' {}
+
 Describe 'Add-KanbanflowTask' {
     It 'creates a new task with a given name' {
         $newTask = Add-KanbanflowTask -ApiToken $testBoardApiToken `
@@ -33,15 +50,43 @@ Describe 'Add-KanbanflowTask' {
     }
 }
 
-Describe 'Get-KanbanflowBoardColumns' {
-    It 'returns a list of the columns within the board' {
-    }
-    It 'enables all other functions to reference columns by name' {
-    }
-}
+Describe 'Add-KanbanflowTaskSubtask' {}
+Describe 'Add-KanbanflowTaskLabel' {}
+Describe 'Add-KanbanflowTaskDate' {}
+Describe 'Add-KanbanflowTaskCollaborator' {}
+Describe 'Add-KanbanflowTaskComment' {}
+Describe 'Add-KanbanflowTaskAttachment' {}
+Describe 'Add-KanbanflowTaskManualTimeEntry' {}
 
 Describe 'Update-KanbanflowTask' {}
+Describe 'Update-KanbanflowTaskSubtask' {}
+Describe 'Update-KanbanflowTaskLabel' {}
+Describe 'Update-KanbanflowTaskDate' {}
+Describe 'Update-KanbanflowTaskCollaborator' {}
+Describe 'Update-KanbanflowTaskComment' {}
+Describe 'Update-KanbanflowTaskManualTimeEntry' {}
+
 Describe 'Delete-KanbanflowTask' {}
+Describe 'Delete-KanbanflowTaskSubtask' {}
+Describe 'Delete-KanbanflowTaskLabel' {}
+Describe 'Delete-KanbanflowTaskDate' {}
+Describe 'Delete-KanbanflowTaskCollaborator' {}
+Describe 'Delete-KanbanflowTaskComment' {}
+Describe 'Delete-KanbanflowTaskAttachment' {}
+Describe 'Delete-KanbanflowTaskManualTimeEntry' {}
+
+Describe 'Get-KanbanflowStopwatchTimeEntries' {}
+Describe 'Delete-KanbanflowStopwatchTimeEntries' {}
+Describe 'Get-KanbanflowPomodoroTimeEntries' {}
+Describe 'Delete-KanbanflowPomodoroTimeEntries' {}
+Describe 'Get-KanbanflowManualTimeEntries' {}
+Describe 'Delete-KanbanflowManualTimeEntries' {}
+
+Describe 'Get-KanbanflowUsers' {}
+
+Describe 'Get-KanbanflowBoardEvents' {}
+Describe 'Get-KanbanflowTaskEvents' {}
+Describe 'Get-KanbanflowTaskEvents' {}
 
 Describe 'Get-KanbanflowBoardSnapshot' {
     It 'makes a screenshot/html snapshot of a kanbanflow board in a way that can be reviewed later' {}
