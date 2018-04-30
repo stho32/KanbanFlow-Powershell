@@ -23,3 +23,23 @@ Describe 'Get-KanbanflowBoard' {
         $board.name | Should -BeExactly "Kanbanflow-Powershell-Testing"
     }
 }
+
+Describe 'Add-KanbanflowTask' {
+    It 'creates a new task with a given name' {
+        $newTask = Add-KanbanflowTask -ApiToken $testBoardApiToken `
+                        -Name "A new testing task"
+        $newTask | Should -Not -BeNullOrEmpty
+        $newTask.taskId | Should -Not -BeNullOrEmpty
+    }
+}
+
+Describe 'Get-KanbanflowBoardColumns' {
+    It 'returns a list of the columns within the board' {
+    }
+    It 'enables all other functions to reference columns by name' {
+    }
+}
+
+Describe 'Update-KanbanflowTask' {}
+Describe 'Delete-KanbanflowTask' {}
+
