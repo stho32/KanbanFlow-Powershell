@@ -191,9 +191,53 @@ function Add-KanbanflowTask {
 
 }
 
+<#
+.SYNOPSIS
+    Grabs information about all columns from a kanban board
+.EXAMPLE
+    $columns = Get-KanbanflowBoardColumns -ApiToken $testBoardApiToken
+#>
+function Get-KanbanflowBoardColumns {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory=$true)]
+        [string]$ApiToken
+    )
+
+    $board = Get-KanbanflowBoard -ApiToken $ApiToken
+
+    return $board.columns
+}
+
+<#
+.SYNOPSIS
+    Grabs the unique id from a column label
+.EXAMPLE
+    $columnTodo = Get-KanbanflowBoardColumnUniqueId -ApiToken $testBoardApiToken -Name "To-Do"
+#>
+function Get-KanbanflowBoardColumnUniqueId {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory=$true)]
+        [string]$ApiToken,
+        [Parameter(Mandatory=$true)]
+        [string]$Label
+    )
+
+    $board = Get-KanbanflowBoard -ApiToken $ApiToken
+
+    $columnUniqueId = ($board.columns | Where-Object { $_.name -eq $Label }).uniqueId 
+
+    return $columnUniqueId
+}
+ 
+
 # Exports for the module
 Export-ModuleMember -Function New-KanbanflowAuthHeader
 Export-ModuleMember -Function Get-KanbanflowBoard
+Export-ModuleMember -Function Get-KanbanflowBoardColumns
+Export-ModuleMember -Function Get-KanbanflowBoardColumnUniqueId
+
 Export-ModuleMember -Function Add-KanbanflowTask
 
 # Old stuff

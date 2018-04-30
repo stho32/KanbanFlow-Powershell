@@ -27,8 +27,15 @@ Describe 'Get-KanbanflowBoard' {
 
 Describe 'Get-KanbanflowBoardColumns' {
     It 'returns a list of the columns within the board' {
+        $columns = Get-KanbanflowBoardColumns -ApiToken $testBoardApiToken
+        $columns.Length | Should -Be 4 
     }
-    It 'enables all other functions to reference columns by name' {
+}
+
+Describe 'Get-KanbanflowBoardColumnUniqueId' {
+    It 'translates the To-Do column to the correct unique Id' {
+        Get-KanbanflowBoardColumnUniqueId -ApiToken $testBoardApiToken -Label "To-Do" |
+            Should -Be "tgGDUJmo1W72"
     }
 }
 
