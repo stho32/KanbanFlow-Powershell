@@ -43,3 +43,7 @@ Describe 'Get-KanbanflowBoardColumns' {
 Describe 'Update-KanbanflowTask' {}
 Describe 'Delete-KanbanflowTask' {}
 
+Describe 'Get-KanbanflowBoardSnapshot' {
+    It 'makes a screenshot/html snapshot of a kanbanflow board in a way that can be reviewed later' {}
+}
+
