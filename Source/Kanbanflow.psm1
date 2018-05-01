@@ -1,4 +1,99 @@
 <#
+    KANBANFLOW POWERSHELL MODULE
+
+    This module implements about 95% of the kanbanflow api in an easily 
+    consumable way so you can fill your kanbanboards with magic.
+
+    Tested with powershell 5 and powershell core.
+#>
+
+
+<#
+.SYNOPSIS
+    Create a base64 auth header for Kanbanflow authentication
+
+.DESCRIPTION
+    Kanbanflow recommends using base64 encoded authentication 
+    that is embedded within the header of requests.
+
+    This function takes in an ApiToken and generates a PSCustomObject
+    which can be passed as Header to Invoke-RestMethod.
+
+.EXAMPLE
+    $headers = New-KanbanflowAuthHeader -ApiToken "..."
+#>
+function New-KanbanflowAuthHeader {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory=$true)]
+        [string]$ApiToken
+    )
+
+    $credentials = "apiToken:" + $ApiToken
+    $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($credentials))
+
+    return @{Authorization=("Basic " + $base64AuthInfo)}
+}
+
+
+<#
+.SYNOPSIS
+    Issues a get command to the kanbanflow api
+.DESCRIPTION
+    The Kanbanflow API accepts two command types: GET and POST.
+    This function encapsulates everything that is needed for a 
+    valid get request.
+#>
+function KanbanflowApi-GetCommand {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory=$true)]
+        [string]$UrlCommandPart,
+        [Parameter(Mandatory=$true)]
+        [string]$ApiToken
+    )
+
+    $authentication = New-KanbanflowAuthHeader -ApiToken $ApiToken
+    Invoke-RestMethod -Method Get -Headers $authentication `
+        -Uri https://kanbanflow.com/api/v1/$UrlCommandPart
+}
+
+<# 
+.SYNOPSIS
+    Issues a POST request to the Kanbanflow API
+.DESCRIPTION
+    The Kanbanflow API accepts 2 types of commands: 
+    GET and POST.
+
+    This function gives you a simple to use framework to 
+    use it.
+#>
+function KanbanflowApi-PostCommand {
+    [CmdletBinding()]
+    param (
+        [Parameter(Mandatory=$true)]
+        [string]$UrlCommandPart,
+        [Parameter(Mandatory=$true)]
+        [string]$ApiToken,
+        [psobject]$data = $null
+    )
+
+    $authentication = New-KanbanflowAuthHeader -ApiToken $ApiToken
+
+    if ($data -eq $null) {
+        $data = New-Object PSObject
+    }
+
+    $asJson = $data | ConvertTo-Json -Compress
+
+    Invoke-RestMethod -Method Post `
+        -Headers $authentication `
+        -ContentType "application/json" `
+        -Uri https://kanbanflow.com/api/v1/$UrlCommandPart `
+        -Body $asJson
+}
+
+<#
 .Synopsis
     Get Kanbanflow Board
 .DESCRIPTION
@@ -15,11 +110,11 @@ function Get-Board {
         [string]$ApiToken
     )
 
-    Invoke-RestMethod -Uri https://kanbanflow.com/api/v1/board?apiToken=$ApiToken
+    KanbanflowApi-GetCommand -ApiToken $ApiToken -UrlCommandPart "board"
 }
 
 <#
-.Synopsis
+.SYNOPSIS
     Get all Tasks from a kanban board
 .DESCRIPTION
     Gets all tasks for a kanbanflow board the 
@@ -28,7 +123,6 @@ function Get-Board {
 
     If you want the tasks in a flat array without
     column information use "Get-TasksFlat" instead.
-    
 .EXAMPLE
     Get-Tasks
 #>
@@ -39,7 +133,7 @@ function Get-Tasks {
         [string]$ApiToken
     )
     
-    Invoke-RestMethod -Uri https://kanbanflow.com/api/v1/tasks?apiToken=$ApiToken
+    KanbanflowApi-GetCommand -ApiToken $ApiToken -UrlCommandPart "tasks"
 }
 
 <#
@@ -55,10 +149,8 @@ function Get-Tasks {
     With this function you basically say what columns you want to "select" and all tasks
     that are contained in those are collected and passed to you as an array.
     Which is much better suited for analysis.
-
 .EXAMPLE
     Get-TasksFlat -ApiToken "..." -Columns "To-Do","Doing"
-
 #>
 function Get-TasksFlat {
     [CmdletBinding()]
@@ -105,38 +197,12 @@ function Update-TaskName {
         [string]$NewTaskName
     )
 
-    $authentication = New-KanbanflowHeaderAuth -ApiToken $ApiToken
+    $data = New-Object psobject
+    $data | Add-Member NoteProperty -Name "name" -Value $NewTaskName
 
-    Invoke-RestMethod -Headers $authentication `
-        -Method Post -Uri https://kanbanflow.com/api/v1/tasks/$TaskId -ContentType "application/json" -Body "{ `"name`":`"$NewTaskName`"}"
+    KanbanflowApi-PostCommand -ApiToken $ApiToken -TaskId $TaskId -data $data
 }
 
-<#
-.SYNOPSIS
-    Create a base64 auth header for Kanbanflow authentication
-
-.DESCRIPTION
-    Kanbanflow recommends using base64 encoded authentication 
-    that is embedded within the header of requests.
-
-    This function takes in an ApiToken and generates a PSCustomObject
-    which can be passed as Header to Invoke-RestMethod.
-
-.EXAMPLE
-    $headers = New-KanbanflowAuthHeader -ApiToken "..."
-#>
-function New-KanbanflowAuthHeader {
-    [CmdletBinding()]
-    param (
-        [Parameter(Mandatory=$true)]
-        [string]$ApiToken
-    )
-
-    $credentials = "apiToken:" + $ApiToken
-    $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($credentials))
-
-    return @{Authorization=("Basic " + $base64AuthInfo)}
-}
 
 <#
 .Synopsis
@@ -230,6 +296,11 @@ function Get-KanbanflowBoardColumnUniqueId {
 
     return $columnUniqueId
 }
+
+<#
+.SYNOPSIS
+
+#>
  
 
 # Exports for the module
