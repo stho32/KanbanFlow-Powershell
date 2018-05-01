@@ -21,6 +21,9 @@ function Add-Task {
 
     $asJson = $data | ConvertTo-Json -Compress
 
+    Write-Host ($authentication | ConvertTo-Json)
+    Write-Host $asJson
+
     Invoke-RestMethod -Method Post `
         -Headers $authentication `
         -ContentType "application/json" `
