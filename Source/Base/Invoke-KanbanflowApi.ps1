@@ -36,9 +36,6 @@ function Invoke-KanbanflowApi {
         }
 
         $asJson = $Data | ConvertTo-Json -Compress
-
-        Write-Host ($authentication | ConvertTo-Json)
-        Write-Host $asJson
         
         Invoke-RestMethod -Method Post `
             -Headers $authentication `
