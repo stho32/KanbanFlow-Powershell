@@ -9,21 +9,23 @@ function Get-BoardColumn {
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,
-        [Parameter(ParameterSetName="ByLabel", Mandatory=$true)]
-        [string]$Label, 
-        [Parameter(ParameterSetName="ByUniqueId", Mandatory=$true)]
-        [string]$UniqueId
+        [string]$Label = "", 
+        [string]$UniqueId = ""
     )
 
     $board = Get-Board -ApiToken $ApiToken
+    $columns = $board.columns
 
-    if ( $PSCmdlet.ParameterSetName -eq "ByLabel" ) {
-        $column = ($board.columns | Where-Object { $_.name -eq $Label })
+    if ( $Label -ne "" ) {
+        $columns = @($columns | Where-Object { $_.name -eq $Label })
     }
 
-    if ( $PSCmdlet.ParameterSetName -eq "ByUniqueId" ) {
-        $column = ($board.columns | Where-Object { $_.uniqueId -eq $UniqueId })
+    if ( $UniqueId -ne "" ) {
+        $columns = @($columns | Where-Object { $_.uniqueId -eq $UniqueId })
     }
 
-    return $column
+    if ( $columns.Length -eq 0 ) { return $null }
+    if ( $columns.Length -eq 1 ) { return $columns[0] }
+
+    return $columns
 }
