@@ -9,20 +9,25 @@
 
 <# Basement for all commands #>
 . $PSScriptRoot/Base/New-KanbanflowAuthHeader.ps1
-. $PSScriptRoot/Base/Invoke-GetKanbanflowApi.ps1
-. $PSScriptRoot/Base/Invoke-PostKanbanflowApi.ps1
+Export-ModuleMember -Function New-KanbanflowAuthHeader
+. $PSScriptRoot/Base/Invoke-KanbanflowApi.ps1
+Export-ModuleMember -Function Invoke-KanbanflowApi
+
 
 <# Board related commands #>
 . $PSScriptRoot/Board/Get-Board.ps1
 
-<# Task related commands #>
+<# Getting Tasks  #>
 . $PSScriptRoot/Get-Task/Get-Task.ps1
 . $PSScriptRoot/Get-Task/Get-Tasks.ps1
 . $PSScriptRoot/Get-Task/Get-TasksFlat.ps1
+
+<# Adding Tasks #>
+. $PSScriptRoot/Create-Task/Add-Task.ps1
+Export-ModuleMember -Function Add-Task
  
 
 # Exports for the module
-Export-ModuleMember -Function New-KanbanflowAuthHeader
 Export-ModuleMember -Function Get-KanbanflowBoard
 Export-ModuleMember -Function Get-KanbanflowBoardColumns
 Export-ModuleMember -Function Get-KanbanflowBoardColumnUniqueId

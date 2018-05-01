@@ -4,5 +4,5 @@
 
 #>
 
-$filesToCover = Get-ChildItem .\Source -File -Recurse -Include *.ps1
+$filesToCover = Get-ChildItem .\Source\Base -File -Recurse -Include *.ps1
 Invoke-Pester -Path "./Tests" -CodeCoverage $filesToCover
