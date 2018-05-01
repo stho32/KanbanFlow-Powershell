@@ -3,45 +3,40 @@ A powershell interface to kanbanflow (kanbanflow.com)
 
 **Currently rewriting using Pester**
 
-
-
-
-## Get all tasks from specific columns
-
 ```powershell
-Import-Module $PSScriptRoot/../Source/Kanbanflow.psm1
 
-$apiToken = "<Your token here>"
+Executing all tests in './Tests'
 
-$tasks = Get-TasksFlat $apiToken -Columns "To-Do","Do today","In progress"
-$tasks
+Executing script /Users/shoff/Documents/Projekte/KanbanFlow-Powershell/Tests/Base/Invoke-KanbanflowApi.Tests.ps1
+
+  Describing Invoke-KanbanflowApi
+    [+] can get the structure of a board as an example, that it can get stuff 1.02s
+    [+] can invoke stuff by posting commands, by for example creating a task 175ms
+    [+] throws an error if you invoke a post command without a data workload 102ms
+
+Executing script /Users/shoff/Documents/Projekte/KanbanFlow-Powershell/Tests/Base/New-KanbanflowAuthHeader.Tests.ps1
+
+  Describing New-KanbanflowAuthHeader
+    [+] creates this known test auth header correctly 108ms
+
+Executing script /Users/shoff/Documents/Projekte/KanbanFlow-Powershell/Tests/Board/Get-Board.Tests.ps1
+
+  Describing Get-Board
+    [+] grabs information about the testing board 123ms
+    [+] s testing board name should be "Kanbanflow-Powershell-Testing" 27ms
+
+Executing script /Users/shoff/Documents/Projekte/KanbanFlow-Powershell/Tests/Board/Get-BoardColumn.Tests.ps1
+
+  Describing Get-BoardColumn
+    [+] grabs information about the column from the testing board by name 137ms
+    [+] grabs information about the column from the testing board by uniqueId 82ms
+    [+] grabs a list of all columns in case there is no filter value present 78ms
+    [+] will return null if it cannot find a matching column 71ms
+Tests completed in 1.92s
+Tests Passed: 10, Failed: 0, Skipped: 0, Pending: 0, Inconclusive: 0 
+
+Code coverage report:
+Covered 100,00 % of 18 analyzed Commands in 2 Files.
+[1]+  Done                    clear
+
 ```
-
-## Now you can perform simple statistics in an automated way
-```powershell
-Import-Module $PSScriptRoot/../Source/Kanbanflow.psm1
-
-$apiToken = "<Your token here>"
-
-$tasks = Get-TasksFlat $apiToken -Columns "To-Do","Do today","In progress","Bereit zum Review"
-
-$greenTasks = $tasks | Where-Object color -eq "green"
-#$yellowTasks = $tasks | Where-Object color -eq "yellow"
-
-if ($tasks.length -ge 0) {
-    $percentageTasksGreen = $greenTasks.length / $tasks.length
-    $percentageTasksGreen = [Math]::Round($percentageTasksGreen*100, 2)
-    Write-Host "$percentageTasksGreen% of active tasks belong to the primary project."
-
-    if ( $percentageTasksGreen -lt 66 ) {
-        Write-Host "Are you sure you focus on the right stuff?" -ForegroundColor Red
-    } else {
-        Write-Host "Looks good to me."  -ForegroundColor Green
-    }
-}
-```
-
-## Further Ideas
-  - Add/Update 1 task on the board regularily with statistics
-  - Alert boss, when assigned task count drops below X
-  - Add tasks based on events in the company
