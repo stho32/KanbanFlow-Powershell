@@ -15,7 +15,7 @@ function Get-Board {
         [string]$ApiToken
     )
 
-    Invoke-GetKanbanflowApi -ApiToken $ApiToken -UrlCommandPart "board"
+    Invoke-KanbanflowApi -ApiToken $ApiToken -Method "Get" -Command "board"
 }
 
 
