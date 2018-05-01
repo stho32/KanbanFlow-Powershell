@@ -4,4 +4,4 @@
 
 #>
 
-Invoke-Pester -Script "./Source/Kanbanflow.Tests.ps1"
+Invoke-Pester -Path "./Tests"
