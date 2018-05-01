@@ -9,13 +9,21 @@ function Get-BoardColumn {
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,
-        [Parameter(Mandatory=$true)]
-        [string]$Label
+        [Parameter(ParameterSetName="ByLabel", Mandatory=$true)]
+        [string]$Label, 
+        [Parameter(ParameterSetName="ByUniqueId", Mandatory=$true)]
+        [string]$UniqueId
     )
 
-    $board = Get-KanbanflowBoard -ApiToken $ApiToken
+    $board = Get-Board -ApiToken $ApiToken
 
-    $columnUniqueId = ($board.columns | Where-Object { $_.name -eq $Label }).uniqueId 
+    if ( $PSCmdlet.ParameterSetName -eq "ByLabel" ) {
+        $column = ($board.columns | Where-Object { $_.name -eq $Label })
+    }
 
-    return $columnUniqueId
+    if ( $PSCmdlet.ParameterSetName -eq "ByUniqueId" ) {
+        $column = ($board.columns | Where-Object { $_.uniqueId -eq $UniqueId })
+    }
+
+    return $column
 }
