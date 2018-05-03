@@ -26,6 +26,8 @@ Export-ModuleMember -Function Get-BoardColumn
 . $PSScriptRoot/Get-Task/Get-Tasks.ps1
 . $PSScriptRoot/Get-Task/Get-TasksFlat.ps1
 
+Export-ModuleMember -Function Get-Task
+
 <# Adding Tasks #>
 . $PSScriptRoot/Create-Task/Add-Task.ps1
 Export-ModuleMember -Function Add-Task
