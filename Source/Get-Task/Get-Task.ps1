@@ -11,5 +11,5 @@ function Get-Task {
         [string]$TaskId
     )
     
-    KanbanflowApi-GetCommand -ApiToken $ApiToken -UrlCommandPart "tasks/$TaskId"
+    Invoke-KanbanflowApi -ApiToken $ApiToken -Method "Get" -Command "tasks/$TaskId"
 }

@@ -28,5 +28,5 @@ function Get-Tasks {
     $urlParameters = New-Object psobject
 
 
-    KanbanflowApi-GetCommand -ApiToken $ApiToken -UrlCommandPart "tasks"
+    KanbanflowApi-GetCommand -ApiToken $ApiToken -Method "Get" -Command "tasks"
 }
