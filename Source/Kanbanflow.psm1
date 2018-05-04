@@ -9,6 +9,8 @@
 
 <# Basement for all commands #>
 . $PSScriptRoot/Base/New-KanbanflowAuthHeader.ps1
+. $PSScriptRoot/Base/ConvertTo-UrlParameters.ps1
+. $PSScriptRoot/Base/Add-MemberIfNotEmpty.ps1
 . $PSScriptRoot/Base/Invoke-KanbanflowApi.ps1
 
 Export-ModuleMember -Function New-KanbanflowAuthHeader
@@ -23,8 +25,6 @@ Export-ModuleMember -Function Get-BoardColumn
 
 <# Getting Tasks  #>
 . $PSScriptRoot/Get-Task/Get-Task.ps1
-. $PSScriptRoot/Get-Task/Get-Tasks.ps1
-. $PSScriptRoot/Get-Task/Get-TasksFlat.ps1
 
 Export-ModuleMember -Function Get-Task
 

@@ -1,9 +1,3 @@
-# KanbanFlow-Powershell
-A powershell interface to kanbanflow (kanbanflow.com)
-
-**Currently rewriting using Pester**
-
-```powershell
 [H[2JWARNING: OS Information retrieval is not possible, reports will contain only partial system data
 Executing all tests in './Tests'
 
@@ -59,4 +53,4 @@ Update-Task/Update-Task.ps1      Update-TaskName           23 $data
 Update-Task/Update-Task.ps1      Update-TaskName           23 Add-Member Not...
 Update-Task/Update-Task.ps1      Update-TaskName           25 KanbanflowApi-...
 
-```
+

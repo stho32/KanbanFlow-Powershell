@@ -7,9 +7,61 @@ function Get-Task {
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,
-        [Parameter(Mandatory=$true)]
-        [string]$TaskId
+        [Parameter(Mandatory=$true, ParameterSetName="SingleTask")]
+        [string]$TaskId,
+        [Parameter(ParameterSetName="MultiTask")]
+        [string]$columnId = "",
+        [string]$columnName = "",
+        [string]$columnIndex = "",
+        [string]$startTaskId = "",
+        [string]$startGroupingDate = "",
+        [string]$limit = "",
+        [string]$order = "",
+        [switch]$Flat = $false
     )
-    
-    Invoke-KanbanflowApi -ApiToken $ApiToken -Method "Get" -Command "tasks/$TaskId"
+
+    # The command is used to request only one task
+    if ( $PSCmdlet.ParameterSetName -eq "SingleTask" ) {
+        Invoke-KanbanflowApi -ApiToken $ApiToken -Method "Get" -Command "tasks/$TaskId"
+        return
+    }
+
+    if ( $PSCmdlet.ParameterSetName -eq "MultiTask" ) {
+        $urlParameters = New-Object psobject
+        
+        Add-MemberIfNotEmpty $urlParameters "columnId" $columnId
+        Add-MemberIfNotEmpty $urlParameters "columnName" $columnName
+        Add-MemberIfNotEmpty $urlParameters "columnIndex" $columnIndex
+        Add-MemberIfNotEmpty $urlParameters "startTaskId" $startTaskId
+        Add-MemberIfNotEmpty $urlParameters "startGroupingDate" $startGroupingDate
+        Add-MemberIfNotEmpty $urlParameters "limit" $limit
+        Add-MemberIfNotEmpty $urlParameters "order" $order
+
+        $tasksInColumns = Invoke-KanbanflowApi -ApiToken $ApiToken -Method "Get" -Command "tasks" -Parameters $urlParameters
+
+        <#
+            This will change the structure from column.tasks to
+            tasks (that contain the column name & id).
+            This flat structure is better suited for analysis and filtering.
+        #>
+        if ($Flat -eq $true) {
+
+            $result = @()
+
+            For ($i = 0; $i -lt $tasksInColumns.Count; $i++)
+            {
+                $columnName  = $tasksInColumns[$i].columnName
+
+                For ($j = 0; $j -lt $tasksInColumns[$i].tasks.Count; $j++) {
+                    $temp = $tasksInColumns[$i].tasks[$j]
+                    $temp | Add-Member NoteProperty -Name "columnName" -Value $columnName -Force
+                    $result +=,$temp
+                }
+            }
+          
+            return @( $result )
+        }
+
+        return $tasksInColumns
+    }
 }

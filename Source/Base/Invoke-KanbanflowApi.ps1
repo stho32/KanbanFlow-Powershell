@@ -16,16 +16,25 @@ function Invoke-KanbanflowApi {
         [string]$Method,
         [Parameter(Mandatory=$true)]
         [string]$Command,
-        [psobject]$Data = $null
+        [psobject]$Data = $null,
+        [psobject]$Parameters = $null
     )
 
     $authentication = New-KanbanflowAuthHeader -ApiToken $ApiToken
 
     if ( $Method -eq "Get" ) {
+
+        $url = "https://kanbanflow.com/api/v1/$Command" 
+        
+        if ($Parameters -ne $null) {
+            $ParametersEncoded = ConvertTo-UrlParameters $Parameters -StartWithQuestionmark 
+            $url = $url + $ParametersEncoded
+        }
+
         Invoke-RestMethod `
             -Method Get `
             -Headers $authentication `
-            -Uri https://kanbanflow.com/api/v1/$Command
+            -Uri $url
 
         return
     }
