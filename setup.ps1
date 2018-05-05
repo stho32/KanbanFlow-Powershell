@@ -6,8 +6,14 @@
 #>
 
 Write-Host "Checking for 'Pester' for unit test support..."
-if (!(Get-Module -ListAvailable -Name Pester)) {
-    Install-Module -Name Pester -Force -SkipPublisherCheck
+Write-Host "To ensure we have the correct version on a cleanly installed VM on azure or google cloud we need to remove it..."
+Remove-Module Pester 
+Write-Host "Removing the module wont work on new VMs but on cleanly installed computers."
+Write-Host "Thus we can now assume that, if we find a directory there, it has not been cleanly installed..."
+if (Test-Path -Path "C:\Program Files\WindowsPowerShell\Modules\Pester" ) {
+    Remove-Item -Force -Recurse -Path "C:\Program Files\WindowsPowerShell\Modules\Pester"
 }
-Write-Host "Checking if 'Pester' is available in the newest version..."
-Update-Module -Name Pester
+if (Test-Path -Path "C:\Program Files (x86)\WindowsPowerShell\Modules\Pester" ) {
+    Remove-Item -Force -Recurse -Path "C:\Program Files (x86)\WindowsPowerShell\Modules\Pester"
+}
+Install-Module Pester -Force -SkipPublisherCheck
