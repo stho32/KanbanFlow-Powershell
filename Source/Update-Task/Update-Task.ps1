@@ -22,5 +22,5 @@ function Update-TaskName {
     $data = New-Object psobject
     $data | Add-Member NoteProperty -Name "name" -Value $NewTaskName
 
-    KanbanflowApi-PostCommand -ApiToken $ApiToken -TaskId $TaskId -data $data
+    Invoke-KanbanflowApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$TaskId" -data $data
 }

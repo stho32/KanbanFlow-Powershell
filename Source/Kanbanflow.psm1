@@ -40,6 +40,11 @@ Export-ModuleMember -Function Get-TimeEntries
 
 Export-ModuleMember -Function Add-Task
  
+<# Updating Tasks #>
+. $PSScriptRoot/Update-Task/Update-Task.ps1
+
+Export-ModuleMember -Function Update-TaskName
+
 
 # Exports for the module
 Export-ModuleMember -Function Get-KanbanflowBoard
