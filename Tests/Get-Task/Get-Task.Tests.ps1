@@ -22,7 +22,4 @@ Describe 'Get-Task' {
         $tasksFromBoard | Should -Not -BeNullOrEmpty
         #Write-Host ($tasksFromBoard | ConvertTo-Json)
     }
-
-
-
 }
