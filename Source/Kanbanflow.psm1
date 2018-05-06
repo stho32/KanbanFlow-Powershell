@@ -12,9 +12,11 @@
 . $PSScriptRoot/Base/ConvertTo-UrlParameters.ps1
 . $PSScriptRoot/Base/Add-MemberIfNotEmpty.ps1
 . $PSScriptRoot/Base/Invoke-KanbanflowApi.ps1
+. $PSScriptRoot/Base/ConvertTo-KanbanflowDateTime.ps1
 
 Export-ModuleMember -Function New-KanbanflowAuthHeader
 Export-ModuleMember -Function Invoke-KanbanflowApi
+Export-ModuleMember -Function ConvertTo-KanbanflowDateTime
 
 <# Board related commands #>
 . $PSScriptRoot/Board/Get-Board.ps1
@@ -28,8 +30,14 @@ Export-ModuleMember -Function Get-BoardColumn
 
 Export-ModuleMember -Function Get-Task
 
+<# Getting time entries #>
+. $PSScriptRoot/Get-TimeEntries/Get-TimeEntries.ps1
+
+Export-ModuleMember -Function Get-TimeEntries
+
 <# Adding Tasks #>
 . $PSScriptRoot/Create-Task/Add-Task.ps1
+
 Export-ModuleMember -Function Add-Task
  
 

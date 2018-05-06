@@ -28,6 +28,7 @@ function ConvertTo-UrlParameters {
         $result += $_.Name 
         $result += "="
         $result += [System.Web.HttpUtility]::UrlEncode($_.Value)
+        $position += 1
     }
 
     return $result
