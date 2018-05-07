@@ -2,16 +2,15 @@
 .SYNOPSIS
     Issues a get command to the kanbanflow api
 .DESCRIPTION
-    The Kanbanflow API accepts two command types: GET and POST.
-    This function encapsulates everything that is needed for a 
-    valid get request.
+    The Kanbanflow API accepts the following command types: GET, POST and DELETE.
+    This function encapsulates everything that is needed for a valid request.
 #>
 function Invoke-KanbanflowApi {
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,
-        [ValidateSet("Get","Post")] 
+        [ValidateSet("Get","Post", "Delete")] 
         [Parameter(Mandatory=$true)]
         [string]$Method,
         [Parameter(Mandatory=$true)]
@@ -51,6 +50,15 @@ function Invoke-KanbanflowApi {
             -ContentType "application/json" `
             -Uri https://kanbanflow.com/api/v1/$Command `
             -Body $asJson  
+
+        return
+    }
+
+    if ( $Method -eq "Delete" ) {
+        
+        Invoke-RestMethod -Method Delete `
+            -Headers $authentication `
+            -Uri https://kanbanflow.com/api/v1/$Command 
 
         return
     }
