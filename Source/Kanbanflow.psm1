@@ -45,6 +45,11 @@ Export-ModuleMember -Function Add-Task
 
 Export-ModuleMember -Function Update-TaskName
 
+<# Analysis #>
+. $PSScriptRoot/Analysis/Get-DayOverview.ps1
+
+Export-ModuleMember -Function Get-DayOverview
+
 
 # Exports for the module
 Export-ModuleMember -Function Get-KanbanflowBoard
