@@ -11,7 +11,9 @@ function Get-DayOverview {
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,
         [Parameter(Mandatory=$true)]
-        [DateTime]$Day
+        [DateTime]$Day,
+        [ValidateSet("Text", "Html")]
+        [string]$format="Text"
     )
 
     $from = ($Day).Date
@@ -36,16 +38,36 @@ function Get-DayOverview {
         $entry | Add-Member NoteProperty -Name color -Value $color
     }
 
+
+    $template_StartUser = "User: #username#"
+    $template_StartColor = "    Color: #color#"
+    $template_Task = "      - #taskname# (#pomodoros# P)"
+    $template_EndColor = "    = #sectionsP# P"
+    $template_EndUser = " = #totalP# P"
+
+    if ($format -eq "Html") {
+        $template_StartUser = "<strong>User: #username#</strong><br/>"
+        $template_StartColor = "<strong>Color: #color#</strong><br/><ul>"
+        $template_Task = "      <li>#taskname# (#pomodoros# P)</li>"
+        $template_EndColor = "</ul>    = #sectionsP# P<br/>"
+        $template_EndUser = "<br/><br><strong> = #totalP# P</strong>"
+    }
+
+    $result = [System.Text.StringBuilder]::new()
     <# Then we group by user and color (task type), finally per task
        to create a statistic about the time that went in every task type and
        task in pomodoros. #>
     $entries | Group-Object userId | ForEach-Object {
-        Write-Output "User: $($_.name)"
+        
+        [void]$result.AppendLine($template_StartUser.Replace("#username#", $_.name))
+        
         $totalP = 0.0
 
         $userColors = $_.group | Group-Object color
         $userColors | ForEach-Object {
-            Write-Output "    Color: $($_.name)"
+            
+            [void]$result.AppendLine($template_StartColor.Replace("#color#", $_.name))
+            
             $sectionsP = 0.0
 
             $userTasks = $_.group | Group-Object taskName
@@ -54,14 +76,15 @@ function Get-DayOverview {
                 $pomodoros = [Math]::Round( $totalMinutes / 25, 1 )
                 $sectionsP += $pomodoros
                 $totalP += $pomodoros
-                Write-Output "      - $($_.name) ($pomodoros P)" 
+                [void]$result.AppendLine($template_Task.Replace("#taskname#", $_.name).Replace("#pomodoros#", $pomodoros.ToString()))
             }
 
-            Write-Output "    = $sectionsP P"
-            Write-Output ""
+            [void]$result.AppendLine($template_EndColor.Replace("#sectionsP#", $sectionsP.ToString()))
         }
 
-        Write-Output " = $totalP P"
-        Write-Output ""
+        
+        [void]$result.AppendLine($template_EndUser.Replace("#totalP#", $totalP.ToString()))
     }
+
+    $result.ToString()
 }
