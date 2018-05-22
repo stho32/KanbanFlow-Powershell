@@ -47,8 +47,10 @@ Export-ModuleMember -Function Update-TaskName
 
 <# Analysis #>
 . $PSScriptRoot/Analysis/Get-DayOverview.ps1
+. $PSScriptRoot/Analysis/Get-TimeUsageOverview.ps1
 
 Export-ModuleMember -Function Get-DayOverview
+Export-ModuleMember -Function Get-TimeUsageOverview
 
 
 # Exports for the module
