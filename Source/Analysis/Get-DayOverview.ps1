@@ -28,7 +28,9 @@ function Get-DayOverview {
         
         $taskName = $task.name
         $color = $task.color 
-        
+        $number = $task.number.value
+        $status = $task.columnName
+
         $fromDateTime = $entry.startTimeStamp
         $tillDateTime = $entry.endTimeStamp
         $durationInMinutes = [Math]::Round(($tillDateTime - $fromDateTime).TotalMinutes,0)
@@ -36,6 +38,9 @@ function Get-DayOverview {
         $entry | Add-Member NoteProperty -Name taskName -Value $taskName
         $entry | Add-Member NoteProperty -Name durationInMinutes -Value $durationInMinutes
         $entry | Add-Member NoteProperty -Name color -Value $color
+        $entry | Add-Member NoteProperty -Name number -Value $number
+        $entry | Add-Member NoteProperty -Name status -Value $status 
+
     }
 
 
@@ -70,13 +75,15 @@ function Get-DayOverview {
             
             $sectionsP = 0.0
 
-            $userTasks = $_.group | Group-Object taskName
+            $userTasks = $_.group | Group-Object -Property taskName
             $userTasks | ForEach-Object {
                 $totalMinutes = ($_.group | Measure-Object durationInMinutes -Sum).Sum
+                $number = $_.group[0].number
+                $status = $_.group[0].status
                 $pomodoros = [Math]::Round( $totalMinutes / 25, 1 )
                 $sectionsP += $pomodoros
                 $totalP += $pomodoros
-                [void]$result.AppendLine($template_Task.Replace("#taskname#", $_.name).Replace("#pomodoros#", $pomodoros.ToString()))
+                [void]$result.AppendLine($template_Task.Replace("#taskname#", "Nr. " + $number.ToString() + ", " + $status + " : " + $_.name).Replace("#pomodoros#", $pomodoros.ToString()))
             }
 
             [void]$result.AppendLine($template_EndColor.Replace("#sectionsP#", $sectionsP.ToString()))
