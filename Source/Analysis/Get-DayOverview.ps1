@@ -55,7 +55,7 @@ function Get-DayOverview {
         $template_StartColor = "<strong>Color: #color#</strong><br/><ul>"
         $template_Task = "      <li>#taskname# (#pomodoros# P)</li>"
         $template_EndColor = "</ul>    = #sectionsP# P<br/>"
-        $template_EndUser = "<br/><br><strong> = #totalP# P</strong>"
+        $template_EndUser = "<br/><br><strong> = #totalP# P</strong><br/><br/>"
     }
 
     $result = [System.Text.StringBuilder]::new()
