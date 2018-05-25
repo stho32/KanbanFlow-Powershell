@@ -30,6 +30,11 @@ Export-ModuleMember -Function Get-BoardColumn
 
 Export-ModuleMember -Function Get-Task
 
+<# Getting Comments of a Task  #>
+. $PSScriptRoot/Get-Comments/Get-Comments.ps1
+
+Export-ModuleMember -Function Get-Comments
+
 <# Getting time entries #>
 . $PSScriptRoot/Get-TimeEntries/Get-TimeEntries.ps1
 
