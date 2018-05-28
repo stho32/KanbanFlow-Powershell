@@ -27,10 +27,12 @@ Export-ModuleMember -Function Get-BoardColumn
 
 <# Getting Tasks  #>
 . $PSScriptRoot/Get-Task/Get-Task.ps1
-. $PSScriptRoot/Get-Comments/Get-Comments.ps1
+. $PSScriptRoot/Get-Task/Get-Comments.ps1
+. $PSScriptRoot/Get-Task/Get-SubTasks.ps1
 
 Export-ModuleMember -Function Get-Task
 Export-ModuleMember -Function Get-Comments
+Export-ModuleMember -Function Get-SubTasks
 
 <# Getting time entries #>
 . $PSScriptRoot/Get-TimeEntries/Get-TimeEntries.ps1
@@ -54,6 +56,10 @@ Export-ModuleMember -Function Update-TaskName
 Export-ModuleMember -Function Get-DayOverview
 Export-ModuleMember -Function Get-TimeUsageOverview
 
+<# Conversion (to HTML) #>
+. $PSScriptRoot/Html/ConvertSubTasksTo-Html.ps1
+
+Export-ModuleMember -Function ConvertSubTasksTo-Html
 
 # Exports for the module
 Export-ModuleMember -Function Get-KanbanflowBoard
@@ -62,7 +68,3 @@ Export-ModuleMember -Function Get-KanbanflowBoardColumnUniqueId
 
 Export-ModuleMember -Function Add-KanbanflowTask
 
-# Old stuff
-Export-ModuleMember -Function Get-Tasks
-Export-ModuleMember -Function Get-TasksFlat
-Export-ModuleMember -Function Update-TaskName
