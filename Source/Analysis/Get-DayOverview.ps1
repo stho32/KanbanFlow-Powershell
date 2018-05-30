@@ -83,7 +83,13 @@ function Get-DayOverview {
                 $pomodoros = [Math]::Round( $totalMinutes / 25, 1 )
                 $sectionsP += $pomodoros
                 $totalP += $pomodoros
-                [void]$result.AppendLine($template_Task.Replace("#taskname#", "Nr. " + $number.ToString() + ", " + $status + " : " + $_.name).Replace("#pomodoros#", $pomodoros.ToString()))
+                $taskText = $template_Task
+                $taskText = $taskText.Replace("#nr#", $number.ToString())
+                $taskText = $taskText.Replace("#pomodoros#", $pomodoros.ToString())
+                $taskText = $taskText.Replace("#taskname#", $_.name)
+                $taskText = $taskText.Replace("#column#", $status)
+
+                [void]$result.AppendLine($taskText)
             }
 
             [void]$result.AppendLine($template_EndColor.Replace("#sectionsP#", $sectionsP.ToString()))
