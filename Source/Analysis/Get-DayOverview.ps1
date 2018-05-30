@@ -46,14 +46,14 @@ function Get-DayOverview {
 
     $template_StartUser = "User: #username#"
     $template_StartColor = "    Color: #color#"
-    $template_Task = "      - #taskname# (#pomodoros# P)"
+    $template_Task = "      - Nr. #nr#, #column# : #taskname# (#pomodoros# P)"
     $template_EndColor = "    = #sectionsP# P"
     $template_EndUser = " = #totalP# P"
 
     if ($format -eq "Html") {
         $template_StartUser = "<strong>User: #username#</strong><br/>"
         $template_StartColor = "<strong>Color: #color#</strong><br/><ul>"
-        $template_Task = "      <li>#taskname# (#pomodoros# P)</li>"
+        $template_Task = "      <li><span style=`"color:#2E75B6`">Nr. #nr#, #column# : <strong>#taskname#</strong> (#pomodoros# P)</span><br/>_<br/></li>"
         $template_EndColor = "</ul>    = #sectionsP# P<br/>"
         $template_EndUser = "<br/><br><strong> = #totalP# P</strong><br/><br/>"
     }
