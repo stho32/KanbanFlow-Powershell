@@ -51,8 +51,10 @@ Export-ModuleMember -Function Update-TaskName
 
 <# Events #>
 . $PSScriptRoot/Events/Get-Events.ps1
+. $PSScriptRoot/Events/Get-NewTasks.ps1
 
 Export-ModuleMember -Function Get-Events
+Export-ModuleMember -Function Get-NewTasks
 
 <# Analysis #>
 . $PSScriptRoot/Analysis/Get-DayOverview.ps1
