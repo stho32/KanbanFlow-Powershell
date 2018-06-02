@@ -27,10 +27,12 @@ Export-ModuleMember -Function Get-BoardColumn
 
 <# Getting Tasks  #>
 . $PSScriptRoot/Get-Task/Get-Task.ps1
+. $PSScriptRoot/Get-Task/Get-TaskByNumber.ps1
 . $PSScriptRoot/Get-Task/Get-Comments.ps1
 . $PSScriptRoot/Get-Task/Get-SubTasks.ps1
 
 Export-ModuleMember -Function Get-Task
+Export-ModuleMember -Function Get-TaskByNumber
 Export-ModuleMember -Function Get-Comments
 Export-ModuleMember -Function Get-SubTasks
 
