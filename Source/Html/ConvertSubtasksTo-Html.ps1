@@ -5,8 +5,6 @@
 function ConvertSubTasksTo-Html {
     param (
         [Parameter(Mandatory=$true)]
-        [string]$ApiToken,
-        [Parameter(Mandatory=$true)]
         [object]$SubTasks
     )
 
