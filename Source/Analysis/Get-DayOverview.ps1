@@ -46,7 +46,7 @@ function Get-DayOverview {
     }
 
 
-    $template_lineBreak = "\n"
+    $template_lineBreak = "`n"
     $template_StartUser = "User: #username#"
     $template_StartColor = "    Color: #color#"
     $template_Task = "      - Nr. #nr#, #column# : #taskname# (#pomodoros# P)" + $template_lineBreak + "#comments#"
@@ -100,7 +100,7 @@ function Get-DayOverview {
                     if ($comment.createdTimestamp -gt $from -and `
                         $comment.createdTimestamp -lt $to -and `
                         $comment.authorUserId -eq $_.group[0].userId) {
-                        $comments += $comment.text + $template_lineBreak + $template_lineBreak
+                        $comments += $comment.text.Replace("`n", $template_lineBreak) + $template_lineBreak + $template_lineBreak
                     }
                 }
                 $comments = if ($comments -eq "") { ("_" + $template_lineBreak + $template_lineBreak) } else { $comments }

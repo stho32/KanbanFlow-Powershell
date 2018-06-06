@@ -66,7 +66,7 @@ Export-ModuleMember -Function Get-DayOverview
 Export-ModuleMember -Function Get-TimeUsageOverview
 
 <# Conversion (to HTML) #>
-. $PSScriptRoot/Html/ConvertSubTasksTo-Html.ps1
+. $PSScriptRoot/Html/ConvertSubtasksTo-Html.ps1
 
 Export-ModuleMember -Function ConvertSubTasksTo-Html
 
