@@ -61,9 +61,11 @@ Export-ModuleMember -Function Get-NewTasks
 <# Analysis #>
 . $PSScriptRoot/Analysis/Get-DayOverview.ps1
 . $PSScriptRoot/Analysis/Get-TimeUsageOverview.ps1
+. $PSScriptRoot/Analysis/Get-TimeUsageTable.ps1
 
 Export-ModuleMember -Function Get-DayOverview
 Export-ModuleMember -Function Get-TimeUsageOverview
+Export-ModuleMember -Function Get-TimeUsageTable
 
 <# Conversion (to HTML) #>
 . $PSScriptRoot/Html/ConvertSubtasksTo-Html.ps1
