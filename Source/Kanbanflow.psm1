@@ -26,15 +26,27 @@ Export-ModuleMember -Function Get-Board
 Export-ModuleMember -Function Get-BoardColumn
 
 <# Getting Tasks  #>
+. $PSScriptRoot/Get-Task/Get-Attachments.ps1
+. $PSScriptRoot/Get-Task/Get-Collaborators.ps1
+. $PSScriptRoot/Get-Task/Get-Comments.ps1
+. $PSScriptRoot/Get-Task/Get-Dates.ps1
+. $PSScriptRoot/Get-Task/Get-Labels.ps1
+. $PSScriptRoot/Get-Task/Get-ManualTimeEntries.ps1
+. $PSScriptRoot/Get-Task/Get-SubTasks.ps1
 . $PSScriptRoot/Get-Task/Get-Task.ps1
 . $PSScriptRoot/Get-Task/Get-TaskByNumber.ps1
-. $PSScriptRoot/Get-Task/Get-Comments.ps1
-. $PSScriptRoot/Get-Task/Get-SubTasks.ps1
+. $PSScriptRoot/Get-Task/Get-TimeEntries.ps1
 
+Export-ModuleMember -Function Get-Attachments
+Export-ModuleMember -Function Get-Collaborators
+Export-ModuleMember -Function Get-Comments
+Export-ModuleMember -Function Get-Dates
+Export-ModuleMember -Function Get-Labels
+Export-ModuleMember -Function Get-ManualTimeEntries
+Export-ModuleMember -Function Get-SubTasks
 Export-ModuleMember -Function Get-Task
 Export-ModuleMember -Function Get-TaskByNumber
-Export-ModuleMember -Function Get-Comments
-Export-ModuleMember -Function Get-SubTasks
+Export-ModuleMember -Function Get-TimeEntries
 
 <# Getting time entries #>
 . $PSScriptRoot/Get-TimeEntries/Get-TimeEntries.ps1
