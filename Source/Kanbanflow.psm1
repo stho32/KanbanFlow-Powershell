@@ -54,8 +54,18 @@ Export-ModuleMember -Function Get-TimeEntries
 Export-ModuleMember -Function Get-TimeEntries
 
 <# Adding Tasks #>
+. $PSScriptRoot/Create-Task/Add-Collaborator.ps1
+. $PSScriptRoot/Create-Task/Add-Comment.ps1
+. $PSScriptRoot/Create-Task/Add-Date.ps1
+. $PSScriptRoot/Create-Task/Add-Label.ps1
+. $PSScriptRoot/Create-Task/Add-SubTask.ps1
 . $PSScriptRoot/Create-Task/Add-Task.ps1
 
+Export-ModuleMember -Function Add-Collaborator
+Export-ModuleMember -Function Add-Comment
+Export-ModuleMember -Function Add-Date
+Export-ModuleMember -Function Add-Label
+Export-ModuleMember -Function Add-SubTask
 Export-ModuleMember -Function Add-Task
  
 <# Updating Tasks #>
