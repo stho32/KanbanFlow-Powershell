@@ -18,6 +18,9 @@ function Get-TimeUsageTable {
 
     $from = ($FromDay).Date
     $to = ($ToIncludingDay).Date.AddDays(1).AddSeconds(-1)
+
+    $dayCount = [int]($to - $from).TotalDays
+
     $entries = Get-TimeEntries -From $from -To $to -ApiToken $ApiToken
     $tasks = Get-Task -ApiToken $ApiToken -Flat
 
@@ -61,7 +64,7 @@ function Get-TimeUsageTable {
             Write-Output "$user - $color : $sectionsP P"
         }
 
-        Write-Output "$user = $totalP P"
+        Write-Output ("$user = $totalP P ( = " + [Math]::Round( $totalP / $dayCount, 1 ) + " P/day )")
         Write-Output ""
     }
 }
