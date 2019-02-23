@@ -78,6 +78,11 @@ Export-ModuleMember -Function New-KBFTask
 
 Export-ModuleMember -Function Update-TaskName
 
+<# Removing Tasks #>
+. $PSScriptRoot/Delete-Task/Remove-KBFTask.ps1
+
+Export-ModuleMember -Function Remove-KBFTask
+
 <# Events #>
 . $PSScriptRoot/Events/Get-Events.ps1
 . $PSScriptRoot/Events/Get-NewTasks.ps1

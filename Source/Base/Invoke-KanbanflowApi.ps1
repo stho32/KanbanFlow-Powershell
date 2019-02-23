@@ -30,7 +30,6 @@ function Invoke-KanbanflowApi {
     }
 
     if ( $Method -eq "Get" ) {
-
         $url = "https://kanbanflow.com/api/v1/$Command" 
         
         if ($Parameters -ne $null) {
@@ -42,8 +41,6 @@ function Invoke-KanbanflowApi {
             -Method Get `
             -Headers $authentication `
             -Uri $url
-
-        return
     }
 
     if ( $Method -eq "Post" ) {
@@ -58,16 +55,16 @@ function Invoke-KanbanflowApi {
             -ContentType "application/json" `
             -Uri https://kanbanflow.com/api/v1/$Command `
             -Body $asJson  
-
-        return
     }
 
     if ( $Method -eq "Delete" ) {
+        $result = Invoke-RestMethod -Method Delete `
+                                    -Headers $authentication `
+                                    -Uri https://kanbanflow.com/api/v1/$Command
         
-        Invoke-RestMethod -Method Delete `
-            -Headers $authentication `
-            -Uri https://kanbanflow.com/api/v1/$Command 
-
-        return
+        # in case nothing special happens, we avoid a newline that is returned
+        if ([bool]$result) {
+            $result
+        }
     }
 }
