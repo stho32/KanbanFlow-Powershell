@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Get a task by its ID
-#>
 function Get-Task {
+    <#
+        .SYNOPSIS
+        Get a task by its ID
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]

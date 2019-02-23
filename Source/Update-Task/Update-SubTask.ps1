@@ -1,8 +1,9 @@
-<#
-.SYNOPSIS
-    Update a subtask by name or id
-#>
+
 function Update-SubTask {
+    <#
+        .SYNOPSIS
+        Update a subtask by name or id
+    #>
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,

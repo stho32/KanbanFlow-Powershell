@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Create a label
-#>
 function Add-Label {
+    <#
+        .SYNOPSIS
+        Create a label
+    #>
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,

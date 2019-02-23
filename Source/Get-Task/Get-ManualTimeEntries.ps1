@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Grab all manual-time-entries from a task
-#>
 function Get-ManualTimeEntries {
+    <#
+        .SYNOPSIS
+        Grab all manual-time-entries from a task
+    #>
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,

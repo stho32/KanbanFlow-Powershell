@@ -1,11 +1,12 @@
-<#
-.SYNOPSIS
-    Creates a time usage table for a time span 
-.DESCRIPTION
-    You get just the users as well as their time spent grouped by color
-    of the task
-#>
 function Get-TimeUsageTable {
+    <#
+        .SYNOPSIS
+        Creates a time usage table for a time span 
+        
+        .DESCRIPTION
+        You get just the users as well as their time spent grouped by color
+        of the task
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]

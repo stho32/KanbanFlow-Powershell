@@ -1,11 +1,12 @@
-<#
-.SYNOPSIS
-    Grabs all time entries, groups them as report
-.DESCRIPTION
-    Sometimes you have to report what your day was like.
-    No problem if you used the kanbanflow timer features.
-#>
 function Get-DayOverview {
+    <#
+        .SYNOPSIS
+        Grabs all time entries, groups them as report
+
+        .DESCRIPTION
+        Sometimes you have to report what your day was like.
+        No problem if you used the kanbanflow timer features.
+    #>    
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]

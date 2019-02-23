@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Grab all subtasks from a task
-#>
 function Get-SubTasks {
+    <#
+        .SYNOPSIS
+        Grab all subtasks from a task
+    #>
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,

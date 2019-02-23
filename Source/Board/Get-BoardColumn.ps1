@@ -1,10 +1,11 @@
-<#
-.SYNOPSIS
-    Grabs the unique id from a column label
-.EXAMPLE
-    $columnTodo = Get-KanbanflowBoardColumnUniqueId -ApiToken $testBoardApiToken -Name "To-Do"
-#>
 function Get-BoardColumn {
+    <#
+        .SYNOPSIS
+        Grabs the unique id from a column label
+        
+        .EXAMPLE
+        $columnTodo = Get-KanbanflowBoardColumnUniqueId -ApiToken $testBoardApiToken -Name "To-Do"
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]

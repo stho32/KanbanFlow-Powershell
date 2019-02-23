@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Grab all time-entries from a task
-#>
 function Get-TimeEntries {
+    <#
+        .SYNOPSIS
+        Grab all time-entries from a task
+    #>
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,

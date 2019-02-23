@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Add a task to a Kanbanflow board
-#>
 function Add-Task {
+    <#
+        .SYNOPSIS
+        Add a task to a Kanbanflow board
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]

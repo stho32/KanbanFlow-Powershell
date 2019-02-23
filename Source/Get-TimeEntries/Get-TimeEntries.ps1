@@ -1,8 +1,9 @@
-<#
-.SYNOPSIS
-    Get all time entries that are available
-#>
+
 function Get-TimeEntries {
+    <#
+        .SYNOPSIS
+        Get all time entries that are available
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]

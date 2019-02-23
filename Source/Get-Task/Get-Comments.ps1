@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Get comments of a task by their task id
-#>
 function Get-Comments {
+    <#
+        .SYNOPSIS
+        Get comments of a task by their task id
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]

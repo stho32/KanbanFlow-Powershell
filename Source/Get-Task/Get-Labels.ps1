@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Grab all labels from a task
-#>
 function Get-Labels {
+    <#
+        .SYNOPSIS
+        Grab all labels from a task
+    #>
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,

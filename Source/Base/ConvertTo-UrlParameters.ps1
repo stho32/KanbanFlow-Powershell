@@ -1,11 +1,12 @@
-<#
-.SYNOPSIS
-    Converts a custom object to correctly encoded url parameters
-.DESCRIPTION
-    When I need a lot of url parameters this function helps me
-    with encoding and concatenating them using ? and &.
-#>
 function ConvertTo-UrlParameters {
+    <#
+        .SYNOPSIS
+        Converts a custom object to correctly encoded url parameters
+        
+        .DESCRIPTION
+        When I need a lot of url parameters this function helps me
+        with encoding and concatenating them using ? and &.
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]

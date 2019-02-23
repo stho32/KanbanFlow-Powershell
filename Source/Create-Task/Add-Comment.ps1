@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Add a collaborator to a card
-#>
 function Add-Comment {
+    <#
+        .SYNOPSIS
+        Add a collaborator to a card
+    #>
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,

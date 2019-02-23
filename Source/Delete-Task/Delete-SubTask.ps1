@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Delete a subtask by name or id
-#>
 function Delete-SubTask {
+    <#
+        .SYNOPSIS
+        Delete a subtask by name or id
+    #>
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,

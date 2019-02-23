@@ -1,11 +1,12 @@
-<#
-.SYNOPSIS
-    Issues a get command to the kanbanflow api
-.DESCRIPTION
-    The Kanbanflow API accepts the following command types: GET, POST and DELETE.
-    This function encapsulates everything that is needed for a valid request.
-#>
 function Invoke-KanbanflowApi {
+    <#
+        .SYNOPSIS
+        Issues a get command to the kanbanflow api
+
+        .DESCRIPTION
+        The Kanbanflow API accepts the following command types: GET, POST and DELETE.
+        This function encapsulates everything that is needed for a valid request.
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]

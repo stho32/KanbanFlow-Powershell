@@ -1,14 +1,14 @@
-<#
-.Synopsis
-    Update the name of a task
-
-.DESCRIPTION
-    Update a task name on a kanban board by taskId
-    
-.EXAMPLE
-    Update-Task -ApiToken "..." -TaskId "..." -NewTaskName "New task name"
-#>
 function Update-TaskName {
+    <#
+        .SYNOPSIS
+        Update the name of a task
+
+        .DESCRIPTION
+        Update a task name on a kanban board by taskId
+        
+        .EXAMPLE
+        Update-Task -ApiToken "..." -TaskId "..." -NewTaskName "New task name"
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]

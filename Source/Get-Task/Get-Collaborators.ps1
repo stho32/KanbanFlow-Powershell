@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Grab all collaborators from a task
-#>
 function Get-Collaborators {
+    <#
+        .SYNOPSIS
+        Grab all collaborators from a task
+    #>
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,

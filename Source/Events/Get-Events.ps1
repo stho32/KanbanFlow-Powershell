@@ -1,9 +1,9 @@
-<#
-.SYNOPSIS
-    Get the event entries from a board
-    e.g. to find out which tasks are new today
-#>
 function Get-Events {
+    <#
+        .SYNOPSIS
+        Get the event entries from a board
+        e.g. to find out which tasks are new today
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]

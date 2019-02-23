@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-   Get Task by its number 
-#>
 function Get-TaskByNumber {
+    <#
+        .SYNOPSIS
+    Get Task by its number 
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]

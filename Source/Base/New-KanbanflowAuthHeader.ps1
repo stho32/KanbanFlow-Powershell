@@ -1,18 +1,18 @@
-<#
-.SYNOPSIS
-    Create a base64 auth header for Kanbanflow authentication
-
-.DESCRIPTION
-    Kanbanflow recommends using base64 encoded authentication 
-    that is embedded within the header of requests.
-
-    This function takes in an ApiToken and generates a PSCustomObject
-    which can be passed as Header to Invoke-RestMethod.
-
-.EXAMPLE
-    $headers = New-KanbanflowAuthHeader -ApiToken "..."
-#>
 function New-KanbanflowAuthHeader {
+    <#
+        .SYNOPSIS
+        Create a base64 auth header for Kanbanflow authentication
+
+        .DESCRIPTION
+        Kanbanflow recommends using base64 encoded authentication 
+        that is embedded within the header of requests.
+
+        This function takes in an ApiToken and generates a PSCustomObject
+        which can be passed as Header to Invoke-RestMethod.
+
+        .EXAMPLE
+        $headers = New-KanbanflowAuthHeader -ApiToken "..."
+    #>
     [CmdletBinding()]
     param (
         [Parameter(Mandatory=$true)]

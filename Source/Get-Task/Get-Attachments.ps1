@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Grab all attachments from a task
-#>
 function Get-Attachments {
+    <#
+        .SYNOPSIS
+        Grab all attachments from a task
+    #>
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,

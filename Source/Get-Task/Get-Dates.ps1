@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Grab all dates from a task
-#>
 function Get-Dates {
+    <#
+        .SYNOPSIS
+        Grab all dates from a task
+    #>
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,

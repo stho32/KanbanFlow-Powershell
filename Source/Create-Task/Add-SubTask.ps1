@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Create a subtask
-#>
 function Add-SubTask {
+    <#
+    .SYNOPSIS
+        Create a subtask
+    #>
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,

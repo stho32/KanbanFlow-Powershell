@@ -1,8 +1,8 @@
-<#
-.SYNOPSIS
-    Create a Date
-#>
 function Add-Date {
+    <#
+        .SYNOPSIS
+        Create a Date
+    #>
     param (
         [Parameter(Mandatory=$true)]
         [string]$ApiToken,
