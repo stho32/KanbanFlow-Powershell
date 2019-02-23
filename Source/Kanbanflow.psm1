@@ -20,6 +20,9 @@ Export-ModuleMember -Function New-KanbanflowAuthHeader
 Export-ModuleMember -Function Invoke-KanbanflowApi
 Export-ModuleMember -Function ConvertTo-KanbanflowDateTime
 
+<# Classes #>
+. $PSScriptRoot/Classes/KanbanflowTaskNumber.ps1
+
 <# Board related commands #>
 . $PSScriptRoot/Board/Get-Board.ps1
 . $PSScriptRoot/Board/Get-BoardColumn.ps1
@@ -61,14 +64,14 @@ Export-ModuleMember -Function Get-TimeEntries
 . $PSScriptRoot/Create-Task/Add-Date.ps1
 . $PSScriptRoot/Create-Task/Add-Label.ps1
 . $PSScriptRoot/Create-Task/Add-SubTask.ps1
-. $PSScriptRoot/Create-Task/Add-Task.ps1
+. $PSScriptRoot/Create-Task/New-KBFTask.ps1
 
 Export-ModuleMember -Function Add-Collaborator
 Export-ModuleMember -Function Add-Comment
 Export-ModuleMember -Function Add-Date
 Export-ModuleMember -Function Add-Label
 Export-ModuleMember -Function Add-SubTask
-Export-ModuleMember -Function Add-Task
+Export-ModuleMember -Function New-KBFTask
  
 <# Updating Tasks #>
 . $PSScriptRoot/Update-Task/Update-Task.ps1
