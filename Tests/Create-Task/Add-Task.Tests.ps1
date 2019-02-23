@@ -3,6 +3,7 @@ Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
 
 Describe 'New-KBFTask' {
     It 'can add a task with a name' {
-        New-KBFTask -ApiToken $testBoardApiToken -Name "Hello world of Taskling!"
+        $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
+        New-KBFTask -ApiToken $testBoardApiToken -Name "Hello world of Taskling!" -ColumnId $column
     }
 }
