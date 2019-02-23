@@ -6,6 +6,8 @@
 
     Tested with powershell 5 and powershell core.
 #>
+$ErrorActionPreference = "Stop"
+Add-Type -AssemblyName System.Web
 
 <# Basement for all commands #>
 . $PSScriptRoot/Base/New-KanbanflowAuthHeader.ps1
@@ -90,9 +92,9 @@ Export-ModuleMember -Function Get-TimeUsageOverview
 Export-ModuleMember -Function Get-TimeUsageTable
 
 <# Conversion (to HTML) #>
-. $PSScriptRoot/Html/ConvertSubtasksTo-Html.ps1
+. $PSScriptRoot/Html/Convert-KanbanflowSubtasksToHtml.ps1
 
-Export-ModuleMember -Function ConvertSubTasksTo-Html
+Export-ModuleMember -Function Convert-KanbanflowSubtasksToHtml
 
 # Exports for the module
 Export-ModuleMember -Function Get-KanbanflowBoard

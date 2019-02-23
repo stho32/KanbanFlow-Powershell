@@ -2,7 +2,7 @@
 .SYNOPSIS
     Converts subtasks given by parameter into a html list.
 #>
-function ConvertSubTasksTo-Html {
+function Convert-KanbanflowSubtasksToHtml {
     param (
         [Parameter(Mandatory=$true)]
         [object]$SubTasks
