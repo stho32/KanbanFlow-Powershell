@@ -25,7 +25,7 @@ function Invoke-KanbanflowApi {
     if ( [bool]$Data ) {
         # Remove empty properties from data
         $Data.PSObject.Properties | 
-            Where-Object { -not $_.Value } | 
+            Where-Object { $_.Value -eq $null } | 
             ForEach-Object { $Data.PSObject.Properties.Remove($_.Name) }
     }
 
