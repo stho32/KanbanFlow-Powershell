@@ -26,9 +26,11 @@ Export-ModuleMember -Function ConvertTo-KanbanflowDateTime
 <# Board related commands #>
 . $PSScriptRoot/Board/Get-Board.ps1
 . $PSScriptRoot/Board/Get-BoardColumn.ps1
+. $PSScriptRoot/Board/Clear-KBFBoard.ps1
 
 Export-ModuleMember -Function Get-Board
 Export-ModuleMember -Function Get-BoardColumn
+Export-ModuleMember -Function Clear-KBFBoard
 
 <# Getting Tasks  #>
 . $PSScriptRoot/Get-Task/Get-Attachments.ps1
