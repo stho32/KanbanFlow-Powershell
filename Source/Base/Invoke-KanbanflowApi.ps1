@@ -22,6 +22,13 @@ function Invoke-KanbanflowApi {
 
     $authentication = New-KanbanflowAuthHeader -ApiToken $ApiToken
 
+    if ( [bool]$Data ) {
+        # Remove empty properties from data
+        $Data.PSObject.Properties | 
+            Where-Object { -not $_.Value } | 
+            ForEach-Object { $Data.PSObject.Properties.Remove($_.Name) }
+    }
+
     if ( $Method -eq "Get" ) {
 
         $url = "https://kanbanflow.com/api/v1/$Command" 
