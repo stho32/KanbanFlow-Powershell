@@ -20,51 +20,55 @@ function Invoke-KanbanflowApi {
         [psobject]$Parameters = $null
     )
 
-    $authentication = New-KanbanflowAuthHeader -ApiToken $ApiToken
+    Process {
+        $authentication = New-KanbanflowAuthHeader -ApiToken $ApiToken
 
-    if ( [bool]$Data ) {
-        # Remove empty properties from data
-        $Data.PSObject.Properties | 
-            Where-Object { $_.Value -eq $null } | 
-            ForEach-Object { $Data.PSObject.Properties.Remove($_.Name) }
-    }
+        if ( [bool]$Data ) {
+            # Remove empty properties from data
+            $Data.PSObject.Properties | 
+                Where-Object { $_.Value -eq $null } | 
+                ForEach-Object { $Data.PSObject.Properties.Remove($_.Name) }
 
-    if ( $Method -eq "Get" ) {
-        $url = "https://kanbanflow.com/api/v1/$Command" 
-        
-        if ($Parameters -ne $null) {
-            $ParametersEncoded = ConvertTo-UrlParameters $Parameters -StartWithQuestionmark 
-            $url = $url + $ParametersEncoded
+            Write-Verbose ($Data | ConvertTo-Json)
         }
 
-        Invoke-RestMethod `
-            -Method Get `
-            -Headers $authentication `
-            -Uri $url
-    }
+        if ( $Method -eq "Get" ) {
+            $url = "https://kanbanflow.com/api/v1/$Command" 
+            
+            if ($Parameters -ne $null) {
+                $ParametersEncoded = ConvertTo-UrlParameters $Parameters -StartWithQuestionmark 
+                $url = $url + $ParametersEncoded
+            }
 
-    if ( $Method -eq "Post" ) {
-        if ($Data -eq $null) {
-            throw "You have invoked a post command but did not pass any data! Please add -Data <PSObject> to add a data load to the command."
+            Invoke-RestMethod `
+                -Method Get `
+                -Headers $authentication `
+                -Uri $url
         }
 
-        $asJson = $Data | ConvertTo-Json -Compress
-        
-        Invoke-RestMethod -Method Post `
-            -Headers $authentication `
-            -ContentType "application/json" `
-            -Uri https://kanbanflow.com/api/v1/$Command `
-            -Body $asJson  
-    }
+        if ( $Method -eq "Post" ) {
+            if ($Data -eq $null) {
+                throw "You have invoked a post command but did not pass any data! Please add -Data <PSObject> to add a data load to the command."
+            }
 
-    if ( $Method -eq "Delete" ) {
-        $result = Invoke-RestMethod -Method Delete `
-                                    -Headers $authentication `
-                                    -Uri https://kanbanflow.com/api/v1/$Command
-        
-        # in case nothing special happens, we avoid a newline that is returned
-        if ([bool]$result) {
-            $result
+            $asJson = $Data | ConvertTo-Json -Compress
+            
+            Invoke-RestMethod -Method Post `
+                -Headers $authentication `
+                -ContentType "application/json" `
+                -Uri https://kanbanflow.com/api/v1/$Command `
+                -Body $asJson  
+        }
+
+        if ( $Method -eq "Delete" ) {
+            $result = Invoke-RestMethod -Method Delete `
+                                        -Headers $authentication `
+                                        -Uri https://kanbanflow.com/api/v1/$Command
+            
+            # in case nothing special happens, we avoid a newline that is returned
+            if ([bool]$result) {
+                $result
+            }
         }
     }
 }
