@@ -18,7 +18,7 @@ function New-KBFTask {
         [ValidateSet("yellow", "white", "red", "green", "blue", "purple", "orange", "cyan", "brown", "magenta")]
         [string]$Color,
         [string]$Description,
-        [KanbanflowTaskNumber]$Number,
+        [PSObject]$Number,
         [string]$ResponsibleUserId,
         [int]$TotalSecondsEstimate,
         [float]$PointsEstimate,
