@@ -9,11 +9,11 @@ function Get-TimeUsageTable {
     #>
     [CmdletBinding()]
     param (
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory = $true)]
         [string]$ApiToken,
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory = $true)]
         [DateTime]$FromDay,
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory = $true)]
         [DateTime]$ToIncludingDay
     )
 
@@ -33,9 +33,19 @@ function Get-TimeUsageTable {
         $taskName = $task.name
         $color = $task.color 
         
+        <# Powershell 6 automatically converts the timestamps
+            while Powershell 5 does not. #>
         $fromDateTime = $entry.startTimeStamp
+        if ( $fromDateTime.GetType().Name -ne "DateTime" ) {
+            $fromDateTime = [DateTime]::Parse($fromDateTime)
+        }
+
         $tillDateTime = $entry.endTimeStamp
-        $durationInMinutes = [Math]::Round(($tillDateTime - $fromDateTime).TotalMinutes,0)
+        if ( $tillDateTime.GetType().Name -ne "DateTime" ) {
+            $tillDateTime = [DateTime]::Parse($tillDateTime)
+        }
+        
+        $durationInMinutes = [Math]::Round(($tillDateTime - $fromDateTime).TotalMinutes, 0)
 
         $entry | Add-Member NoteProperty -Name taskName -Value $taskName
         $entry | Add-Member NoteProperty -Name durationInMinutes -Value $durationInMinutes
