@@ -36,8 +36,18 @@ function Get-DayOverview {
             $status = $task.columnName
             $id = $task._id
 
+            <# Powershell 6 automatically converts the timestamps
+               while Powershell 5 does not. #>
             $fromDateTime = $entry.startTimeStamp
+            if ( $fromDateTime.GetType().Name -ne "DateTime" ) {
+                $fromDateTime = [DateTime]::Parse($fromDateTime)
+            }
+
             $tillDateTime = $entry.endTimeStamp
+            if ( $tillDateTime.GetType().Name -ne "DateTime" ) {
+                $tillDateTime = [DateTime]::Parse($tillDateTime)
+            }
+
             $durationInMinutes = [Math]::Round(($tillDateTime - $fromDateTime).TotalMinutes, 0)
 
             $entry | Add-Member NoteProperty -Name taskName -Value $taskName
