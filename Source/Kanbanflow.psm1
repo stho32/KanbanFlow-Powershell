@@ -20,17 +20,16 @@ Export-ModuleMember -Function New-KanbanflowAuthHeader
 Export-ModuleMember -Function Invoke-KanbanflowApi
 Export-ModuleMember -Function ConvertTo-KanbanflowDateTime
 
-<# Classes #>
-. $PSScriptRoot/Classes/KanbanflowTaskNumber.ps1
-
 <# Board related commands #>
 . $PSScriptRoot/Board/Get-Board.ps1
 . $PSScriptRoot/Board/Get-BoardColumn.ps1
 . $PSScriptRoot/Board/Clear-KBFBoard.ps1
+. $PSScriptRoot/Board/Get-KBFUser.ps1
 
 Export-ModuleMember -Function Get-Board
 Export-ModuleMember -Function Get-BoardColumn
 Export-ModuleMember -Function Clear-KBFBoard
+Export-ModuleMember -Function Get-KBFUser
 
 <# Getting Tasks  #>
 . $PSScriptRoot/Get-Task/Get-Attachments.ps1
