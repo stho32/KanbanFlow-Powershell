@@ -9,28 +9,31 @@ function ConvertTo-UrlParameters {
     #>
     [CmdletBinding()]
     param (
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory = $true)]
         [psobject]$Data,
         [switch]$StartWithQuestionmark
     )
 
-    $position = 0
-    $result = ""
+    Process {
+        $position = 0
+        $result = ""
 
-    $Data.PSObject.Properties | ForEach-Object {
-        if ($position -eq 0) {
-            $result = "&"
-            if ( $StartWithQuestionmark ) {
-                $result = "?"
+        $Data.PSObject.Properties | ForEach-Object {
+            if ($position -eq 0) {
+                $result = "&"
+                if ( $StartWithQuestionmark ) {
+                    $result = "?"
+                }
             }
-        } else {
-            $result += "&"
+            else {
+                $result += "&"
+            }
+            $result += $_.Name 
+            $result += "="
+            $result += [System.Web.HttpUtility]::UrlEncode($_.Value, [System.Text.Encoding]::UTF8)
+            $position += 1
         }
-        $result += $_.Name 
-        $result += "="
-        $result += [System.Web.HttpUtility]::UrlEncode($_.Value)
-        $position += 1
-    }
 
-    return $result
+        $result
+    }
 }
