@@ -8,7 +8,7 @@ function ConvertTo-KanbanflowDateTime {
     #>
     [CmdletBinding()]
     param (
-        [Parameter(Mandatory=$true)]
+        [Parameter(Mandatory=$true, ValueFromPipeline=$true)]
         [DateTime]$DateTime
     )
 
