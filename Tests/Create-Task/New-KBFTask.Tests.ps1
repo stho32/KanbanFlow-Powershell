@@ -91,7 +91,7 @@ Describe 'New-KBFTask' {
 
     It 'can add a task with a due date' {
         $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
-        $targetColumn = $column = (Get-Board -ApiToken $testBoardApiToken).columns[2].uniqueId
+        $targetColumn = (Get-Board -ApiToken $testBoardApiToken).columns[2].uniqueId
         $dueDate = ((Get-Date).Date).AddDays(1) | ConvertTo-KanbanflowDateTime
         $dates = @(
             (New-Object PSObject @{ dueTimestamp = $dueDate; targetColumnId = $targetColumn })
@@ -100,11 +100,8 @@ Describe 'New-KBFTask' {
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Due date" -ColumnId $column -Dates $dates
         $taskDetail = Get-Task -TaskId $task.taskId -ApiToken $testBoardApiToken
 		
-		Write-Host $taskDetail -ForegroundColor "White"
-		$taskDetail.dates | Format-List -Property *
-		
         $taskDetail.dates[0].dueTimestamp   | Should -Be $dueDate
-        $taskDetail.dates[0].targetColumnId | Should -Be $targetColum
+        $taskDetail.dates[0].targetColumnId | Should -Be $targetColumn
     }
 
     It 'can add a task with subtasks' {
@@ -118,12 +115,13 @@ Describe 'New-KBFTask' {
 
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Ticket with subtasks" -ColumnId $column -SubTasks $subtasks
         $taskDetail = Get-Task -TaskId $task.taskId -ApiToken $testBoardApiToken
-        $taskDetail.subtask[0].name | Should -Be "Abgeschlossen"
-        $taskDetail.subtask[0].finished | Should -Be $true
-        $taskDetail.subtask[1].name | Should -Be "Apfel essen"
-        $taskDetail.subtask[1].finished | Should -Be $false
-        $taskDetail.subtask[2].name | Should -Be "Banane essen"
-        $taskDetail.subtask[2].finished | Should -Be $false
+
+        $taskDetail.subtasks[0].name | Should -Be "Abgeschlossen"
+        $taskDetail.subtasks[0].finished | Should -Be $true
+        $taskDetail.subtasks[1].name | Should -Be "Apfel essen"
+        $taskDetail.subtasks[1].finished | Should -Be $false
+        $taskDetail.subtasks[2].name | Should -Be "Banane essen"
+        $taskDetail.subtasks[2].finished | Should -Be $false
     }
 
     It 'can add a task with labels' {
@@ -137,23 +135,24 @@ Describe 'New-KBFTask' {
 
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Ticket with labels" -ColumnId $column -Labels $labels
         $taskDetail = Get-Task -TaskId $task.taskId -ApiToken $testBoardApiToken
-        $taskDetail.label[0].name | Should -Be "Pinned"
-        $taskDetail.label[0].pinned | Should -Be $true
-        $taskDetail.label[1].name | Should -Be "Unpinned"
-        $taskDetail.label[1].pinned | Should -Be $false        
-        $taskDetail.label[2].name | Should -Be "Banane essen"
-        $taskDetail.label[2].pinned | Should -Be $false
+        $taskDetail.labels[0].name | Should -Be "Pinned"
+        $taskDetail.labels[0].pinned | Should -Be $true
+        $taskDetail.labels[1].name | Should -Be "Unpinned"
+        $taskDetail.labels[1].pinned | Should -Be $false        
+        $taskDetail.labels[2].name | Should -Be "Banane essen"
+        $taskDetail.labels[2].pinned | Should -Be $false
     }
 
     It 'can add a task with collaborators' {
         $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
         $Collaborators = (Get-KBFUser -ApiToken $testBoardApiToken) | ForEach-Object {
-            New-Object PSObject @{ userId = $_._id }
+            New-Object PSObject -Property @{ userId = $_._id }
         }
 
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Ticket with collaborators" -ColumnId $column -Collaborators $Collaborators
         $taskDetail = Get-Task -TaskId $task.taskId -ApiToken $testBoardApiToken
-        $taskDetail.collaborators[0].userId | Should -Be $Collaborators
+		Write-Host $taskDetail -ForegroundColor "White"
+        $taskDetail.collaborators[0].userId | Should -Be $Collaborators[0].userId
     }
 
 }
