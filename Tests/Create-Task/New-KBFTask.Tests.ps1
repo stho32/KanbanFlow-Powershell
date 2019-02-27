@@ -70,18 +70,24 @@ Describe 'New-KBFTask' {
 
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Time estimate" -ColumnId $column -TotalSecondsEstimate 7200
         $taskDetail = Get-Task -TaskId $task.taskId -ApiToken $testBoardApiToken
-        $taskDetail.responsibleUserId | Should -Be $ResponsibleUserId
+        $taskDetail.TotalSecondsEstimate | Should -Be 7200
     }
+
+	<#
+	The api can either work with time or point estimations.
+	Since I cannot switch the way the board works through the api, the test
+	for the points estimate is commented out. 
 
     It 'can add a task with a points estimate' {
         $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
 
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Points estimate" -ColumnId $column -PointsEstimate 12.4
         $taskDetail = Get-Task -TaskId $task.taskId -ApiToken $testBoardApiToken
-        $taskDetail.PointsEstimate | Should -Be 12.4
 
         Write-Host $taskDetail -ForegroundColor "White"
+        $taskDetail.PointsEstimate | Should -Be 12.4
     }
+	#>
 
     It 'can add a task with a due date' {
         $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
@@ -93,7 +99,11 @@ Describe 'New-KBFTask' {
 
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Due date" -ColumnId $column -Dates $dates
         $taskDetail = Get-Task -TaskId $task.taskId -ApiToken $testBoardApiToken
-        $taskDetail.dates[0].dueTimestamp | Should -Be $dueDate
+		
+		Write-Host $taskDetail -ForegroundColor "White"
+		$taskDetail.dates | Format-List -Property *
+		
+        $taskDetail.dates[0].dueTimestamp   | Should -Be $dueDate
         $taskDetail.dates[0].targetColumnId | Should -Be $targetColum
     }
 

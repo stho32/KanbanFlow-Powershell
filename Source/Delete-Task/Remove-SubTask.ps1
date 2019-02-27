@@ -1,4 +1,4 @@
-function Delete-SubTask {
+function Remove-SubTask {
     <#
         .SYNOPSIS
         Delete a subtask by name or id
