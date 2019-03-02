@@ -21,6 +21,7 @@ function Invoke-KanbanflowApi {
     )
 
     Process {
+		Wait-KBFApiLimitBrake
         $authentication = New-KanbanflowAuthHeader -ApiToken $ApiToken
 
         if ( [bool]$Data ) {

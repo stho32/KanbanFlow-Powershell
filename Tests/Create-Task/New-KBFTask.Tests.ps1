@@ -151,7 +151,6 @@ Describe 'New-KBFTask' {
 
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Ticket with collaborators" -ColumnId $column -Collaborators $Collaborators
         $taskDetail = Get-Task -TaskId $task.taskId -ApiToken $testBoardApiToken
-		Write-Host $taskDetail -ForegroundColor "White"
         $taskDetail.collaborators[0].userId | Should -Be $Collaborators[0].userId
     }
 
