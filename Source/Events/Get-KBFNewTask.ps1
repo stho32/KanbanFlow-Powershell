@@ -1,4 +1,4 @@
-function Get-NewTasks {
+function Get-KBFNewTask {
     <#
         .SYNOPSIS
         Using the events from a kanban board, grab me a list of all 

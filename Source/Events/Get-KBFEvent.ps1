@@ -1,4 +1,4 @@
-function Get-Events {
+function Get-KBFEvent {
     <#
         .SYNOPSIS
         Get the event entries from a board

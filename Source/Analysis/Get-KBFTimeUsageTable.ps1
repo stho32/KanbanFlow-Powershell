@@ -1,4 +1,4 @@
-function Get-TimeUsageTable {
+function Get-KBFTimeUsageTable {
     <#
         .SYNOPSIS
         Creates a time usage table for a time span 

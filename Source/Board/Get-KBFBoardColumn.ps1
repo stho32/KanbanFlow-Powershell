@@ -1,4 +1,4 @@
-function Get-BoardColumn {
+function Get-KBFBoardColumn {
     <#
         .SYNOPSIS
         Grabs the unique id from a column label

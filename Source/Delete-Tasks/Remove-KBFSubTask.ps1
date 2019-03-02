@@ -1,4 +1,4 @@
-function Remove-SubTask {
+function Remove-KBFSubTask {
     <#
         .SYNOPSIS
         Delete a subtask by name or id

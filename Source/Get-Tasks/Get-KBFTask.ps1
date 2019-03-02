@@ -1,4 +1,4 @@
-function Get-Task {
+function Get-KBFTask {
     <#
         .SYNOPSIS
         Get a task by its ID

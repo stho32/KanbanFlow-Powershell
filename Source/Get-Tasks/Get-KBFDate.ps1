@@ -1,4 +1,4 @@
-function Get-Dates {
+function Get-KBFDate {
     <#
         .SYNOPSIS
         Grab all dates from a task

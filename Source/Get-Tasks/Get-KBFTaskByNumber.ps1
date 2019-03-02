@@ -1,4 +1,4 @@
-function Get-TaskByNumber {
+function Get-KBFTaskByNumber {
     <#
         .SYNOPSIS
     Get Task by its number 

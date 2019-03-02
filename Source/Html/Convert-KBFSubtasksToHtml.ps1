@@ -1,4 +1,4 @@
-function Convert-KanbanflowSubtasksToHtml {
+function Convert-KBFSubtasksToHtml {
     <#
         .SYNOPSIS
         Converts subtasks given by parameter into a html list.

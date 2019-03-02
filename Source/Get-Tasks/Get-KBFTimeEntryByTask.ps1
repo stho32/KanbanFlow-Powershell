@@ -1,4 +1,4 @@
-function Get-TimeEntries {
+function Get-KBFTimeEntryByTask {
     <#
         .SYNOPSIS
         Grab all time-entries from a task

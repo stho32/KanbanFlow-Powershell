@@ -1,4 +1,4 @@
-function ConvertTo-KanbanflowDateTime {
+function ConvertTo-KBFDateTime {
     <#
         .SYNOPSIS
         Converts a datetime to the date format of the Kanbanflow API

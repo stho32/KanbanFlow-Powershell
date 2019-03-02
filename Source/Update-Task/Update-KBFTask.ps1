@@ -1,4 +1,4 @@
-function Update-TaskName {
+function Update-KBFTask {
     <#
         .SYNOPSIS
         Update the name of a task

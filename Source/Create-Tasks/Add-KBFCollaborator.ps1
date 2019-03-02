@@ -1,4 +1,4 @@
-function Add-Collaborator {
+function Add-KBFCollaborator {
     <#
         .SYNOPSIS
         Add a collaborator to a card

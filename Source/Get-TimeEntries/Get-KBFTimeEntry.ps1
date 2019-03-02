@@ -1,5 +1,4 @@
-
-function Get-TimeEntries {
+function Get-KBFTimeEntry {
     <#
         .SYNOPSIS
         Get all time entries that are available

@@ -1,4 +1,4 @@
-function Get-SubTasks {
+function Get-KBFSubTask {
     <#
         .SYNOPSIS
         Grab all subtasks from a task

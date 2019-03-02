@@ -1,4 +1,4 @@
-function Get-Attachments {
+function Get-KBFAttachment {
     <#
         .SYNOPSIS
         Grab all attachments from a task

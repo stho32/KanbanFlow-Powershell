@@ -1,4 +1,4 @@
-function Add-Label {
+function Add-KBFLabel {
     <#
         .SYNOPSIS
         Create a label

@@ -1,4 +1,4 @@
-function Get-Board {
+function Get-KBFBoard {
     <#
         .SYNOPSIS
         Get Kanbanflow Board

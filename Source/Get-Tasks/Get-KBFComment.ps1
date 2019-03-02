@@ -1,4 +1,4 @@
-function Get-Comments {
+function Get-KBFComment {
     <#
         .SYNOPSIS
         Get comments of a task by their task id

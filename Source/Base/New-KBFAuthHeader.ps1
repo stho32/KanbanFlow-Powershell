@@ -1,4 +1,4 @@
-function New-KanbanflowAuthHeader {
+function New-KBFAuthHeader {
     <#
         .SYNOPSIS
         Create a base64 auth header for Kanbanflow authentication

@@ -1,4 +1,4 @@
-function Add-Date {
+function Add-KBFDate {
     <#
         .SYNOPSIS
         Create a Date

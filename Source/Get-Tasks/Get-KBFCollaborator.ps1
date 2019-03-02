@@ -1,4 +1,4 @@
-function Get-Collaborators {
+function Get-KBFCollaborator {
     <#
         .SYNOPSIS
         Grab all collaborators from a task

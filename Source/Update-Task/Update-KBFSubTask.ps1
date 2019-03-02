@@ -1,5 +1,4 @@
-
-function Update-SubTask {
+function Update-KBFSubTask {
     <#
         .SYNOPSIS
         Update a subtask by name or id

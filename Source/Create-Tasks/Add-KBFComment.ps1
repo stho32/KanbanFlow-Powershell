@@ -1,4 +1,4 @@
-function Add-Comment {
+function Add-KBFComment {
     <#
         .SYNOPSIS
         Add a collaborator to a card

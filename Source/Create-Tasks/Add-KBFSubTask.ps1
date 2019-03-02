@@ -1,4 +1,4 @@
-function Add-SubTask {
+function Add-KBFSubTask {
     <#
     .SYNOPSIS
         Create a subtask

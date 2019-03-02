@@ -1,4 +1,4 @@
-function Get-TimeUsageOverview {
+function Get-KBFTimeUsageOverview {
     <#
         .SYNOPSIS
         Creates a time usage overview for a time span 
