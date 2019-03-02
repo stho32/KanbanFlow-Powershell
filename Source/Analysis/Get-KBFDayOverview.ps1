@@ -1,4 +1,4 @@
-function Get-DayOverview {
+function Get-KBFDayOverview {
     <#
         .SYNOPSIS
         Grabs all time entries, groups them as report
