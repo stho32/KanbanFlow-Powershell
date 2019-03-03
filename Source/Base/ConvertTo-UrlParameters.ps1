@@ -6,10 +6,13 @@ function ConvertTo-UrlParameters {
         .DESCRIPTION
         When I need a lot of url parameters this function helps me
         with encoding and concatenating them using ? and &.
+		
+		.EXAMPLE
+		$urlExtension = ConvertTo-UrlParameters $data
     #>
     [CmdletBinding()]
     param (
-        [Parameter(Mandatory = $true)]
+        [Parameter(Mandatory=$true, ValueFromPipeline=$true)]
         [psobject]$Data,
         [switch]$StartWithQuestionmark
     )

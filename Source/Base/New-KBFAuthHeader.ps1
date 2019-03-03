@@ -7,11 +7,11 @@ function New-KBFAuthHeader {
         Kanbanflow recommends using base64 encoded authentication 
         that is embedded within the header of requests.
 
-        This function takes in an ApiToken and generates a PSCustomObject
+        This function takes in an ApiToken and generates a Hashtable
         which can be passed as Header to Invoke-RestMethod.
 
         .EXAMPLE
-        $headers = New-KanbanflowAuthHeader -ApiToken "..."
+        $headers = New-KBFAuthHeader -ApiToken "..."
     #>
     [CmdletBinding()]
     param (
