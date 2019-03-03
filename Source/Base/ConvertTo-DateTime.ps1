@@ -18,7 +18,7 @@ function ConvertTo-DateTime {
 	
 	Process {
 		if ( $InputObject.GetType().Name -eq "String" ) {
-			return [DateTime]::Parse($fromDateTime)
+			return [DateTime]::Parse($InputObject)
 		}
 		$InputObject
 	}

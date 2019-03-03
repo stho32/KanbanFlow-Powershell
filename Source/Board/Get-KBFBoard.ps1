@@ -17,7 +17,9 @@ function Get-KBFBoard {
         [string]$ApiToken
     )
 
-    Invoke-KanbanflowApi -ApiToken $ApiToken -Method "Get" -Command "board"
+	Process {
+	    Invoke-KanbanflowApi -ApiToken $ApiToken -Method "Get" -Command "board"
+	}
 }
 
 

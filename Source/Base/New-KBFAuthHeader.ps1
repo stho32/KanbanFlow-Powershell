@@ -18,9 +18,11 @@ function New-KBFAuthHeader {
         [Parameter(Mandatory=$true)]
         [string]$ApiToken
     )
+	
+	Process {
+		$credentials = "apiToken:" + $ApiToken
+		$base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($credentials))
 
-    $credentials = "apiToken:" + $ApiToken
-    $base64AuthInfo = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes($credentials))
-
-    return @{Authorization=("Basic " + $base64AuthInfo)}
+		@{Authorization=("Basic " + $base64AuthInfo)}
+	}
 }

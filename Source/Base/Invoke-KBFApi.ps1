@@ -22,7 +22,7 @@ function Invoke-KBFApi {
 
     Process {
 		Wait-KBFApiLimitBrake
-        $authentication = New-KanbanflowAuthHeader -ApiToken $ApiToken
+        $authentication = New-KBFAuthHeader -ApiToken $ApiToken
 
         if ( [bool]$Data ) {
             # Remove empty properties from data

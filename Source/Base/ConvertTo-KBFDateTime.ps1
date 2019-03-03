@@ -12,6 +12,8 @@ function ConvertTo-KBFDateTime {
         [DateTime]$DateTime
     )
 
-    $result = $DateTime.ToString("yyyy-MM-ddTHH:mm:ssZ")
-    return $result;
+	Process {
+		$result = $DateTime.ToString("yyyy-MM-ddTHH:mm:ssZ")
+		return $result;
+	}
 }

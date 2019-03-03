@@ -14,14 +14,13 @@ function Get-KBFTimeEntry {
     )
 
     Process {
-
         $parameter = New-Object PSObject -Property @{
-            from = (ConvertTo-KanbanflowDateTime $from)
-            to = (ConvertTo-KanbanflowDateTime $to)
-            limit = 200
+            from  = $from | ConvertTo-KBFDateTime
+            to    = $to   | ConvertTo-KBFDateTime
+            limit = 2000
         }
         
-        Invoke-KanbanflowApi -ApiToken $ApiToken -Method "Get" -Command "time-entries" -Parameters $parameter
-
+        $result = Invoke-KBFApi -ApiToken $ApiToken -Method "Get" -Command "time-entries" -Parameters $parameter
+		$result.value
     }
 }
