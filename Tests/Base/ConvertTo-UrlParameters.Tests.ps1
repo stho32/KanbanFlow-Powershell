@@ -1,23 +1,36 @@
-Describe 'ConvertTo-KBFDateTime' {
+Describe 'ConvertTo-UrlParameters' {
 	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
 	. $PSScriptRoot/../../credentials-for-testing.ps1
 
-    it 'converts a matching DateTime to 2013-12-31T09:00:00Z' {
-        $datetime = Get-Date -Year 2013 -Month 12 -Day 31 -Hour 9 -Minute 0 -Second 0
-        $asString = ConvertTo-KBFDateTime $datetime
-        $asString | Should -Be "2013-12-31T09:00:00Z"
+    it 'encodes parameter values' {
+		$data = New-Object -TypeName PSObject -Property @{
+			name = "Some important name"
+			valueWithAmpersand = "You&better encode me"
+		}
+		
+		$url = $data | ConvertTo-UrlParameters
+ 		$url | Should -Be "&valueWithAmpersand=You%26better+encode+me&name=Some+important+name"
     }   
 
-    it 'converts a matching DateTime to 2013-05-04T23:59:59Z' {
-        $datetime = Get-Date -Year 2018 -Month 5 -Day 4 -Hour 23 -Minute 59 -Second 59
-        $asString = ConvertTo-KBFDateTime $datetime
-        $asString | Should -Be "2018-05-04T23:59:59Z"
+    it 'concatenates parameters with &' {
+		$data = New-Object -TypeName PSObject -Property @{
+			name = "Some important name"
+			valueWithAmpersand = "You&better encode me"
+		}
+		
+		$url = $data | ConvertTo-UrlParameters
+ 		($url.Split("&").Count-1) | Should -Be 2
     }  
 	
-	it 'can use pipeline input' {
-        $datetime = Get-Date -Year 2018 -Month 5 -Day 4 -Hour 23 -Minute 59 -Second 59
-        $asString = $datetime | ConvertTo-KBFDateTime 
-        $asString | Should -Be "2018-05-04T23:59:59Z"
+	it 'can optionally use ? as first character instead of &' {
+		$data = New-Object -TypeName PSObject -Property @{
+			name = "Some important name"
+			valueWithAmpersand = "You&better encode me"
+		}
+		
+		$url = $data | ConvertTo-UrlParameters -StartWithQuestionMark
+ 		($url.Split("&").Count-1) | Should -Be 1
+		$url.StartsWith("?") | Should -Be $true
     } 
 }
 
