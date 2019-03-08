@@ -45,6 +45,6 @@ function New-KBFTask {
             collaborators = $Collaborators
         }
         
-        Invoke-Invoke-Invoke-Invoke-KBFApi -ApiToken $ApiToken -Method "Post" -Command "tasks" -Data $data
+        Invoke-KBFApi -ApiToken $ApiToken -Method "Post" -Command "tasks" -Data $data
     }
 }
