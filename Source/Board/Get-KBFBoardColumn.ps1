@@ -14,7 +14,7 @@ function Get-KBFBoardColumn {
         [string]$UniqueId = ""
     )
 
-    $board = Get-Board -ApiToken $ApiToken
+    $board = Get-KBFBoard -ApiToken $ApiToken
     $columns = $board.columns
 
     if ( $Label -ne "" ) {
