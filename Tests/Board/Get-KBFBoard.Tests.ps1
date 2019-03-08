@@ -1,7 +1,7 @@
 Describe 'Get-KBFBoard' {
 	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
 	. $PSScriptRoot/../../credentials-for-testing.ps1
-    $board = Get-Board -ApiToken $testBoardApiToken
+    $board = Get-KBFBoard -ApiToken $testBoardApiToken
 
     It 'grabs information about the testing board' {
         $board | Should -Not -BeNullOrEmpty
