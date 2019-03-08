@@ -1,7 +1,7 @@
-Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
-. $PSScriptRoot/../../credentials-for-testing.ps1
-
 Describe 'Get-TimeEntries' {
+	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
+	. $PSScriptRoot/../../credentials-for-testing.ps1
+
     # Note : These unit tests do a wrong thing as they
     #        rely on data that i manually created in the testing system
     #        and that cannot easily be recreated in another testing system

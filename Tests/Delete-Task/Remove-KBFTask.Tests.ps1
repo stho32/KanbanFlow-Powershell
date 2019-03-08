@@ -1,7 +1,6 @@
-Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
-. $PSScriptRoot/../../credentials-for-testing.ps1
-
 Describe 'Remove-KBFTask' {
+	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
+	. $PSScriptRoot/../../credentials-for-testing.ps1
 
     It 'can remove a task by Id' {
         $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId

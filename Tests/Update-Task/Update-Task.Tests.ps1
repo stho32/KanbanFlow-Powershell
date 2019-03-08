@@ -1,7 +1,7 @@
-Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
-. $PSScriptRoot/../../credentials-for-testing.ps1
-
 Describe 'Update-Task' {
+	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
+	. $PSScriptRoot/../../credentials-for-testing.ps1
+
     It 'can change the name of a task' {
         $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Hello world of Taskoboard!" -ColumnId $column

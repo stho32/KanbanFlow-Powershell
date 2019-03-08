@@ -1,7 +1,7 @@
-Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
-. $PSScriptRoot/../../credentials-for-testing.ps1
-
 Describe 'Get-KBFTask' {
+	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
+	. $PSScriptRoot/../../credentials-for-testing.ps1
+
     It 'can read a tasks data from the board by id' {
         $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Hello world of Taskoboard!" -ColumnId $column
