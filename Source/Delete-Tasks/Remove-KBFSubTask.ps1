@@ -18,10 +18,10 @@ function Remove-KBFSubTask {
     {
         "ByName"  { 
             $encodedByName = [System.Web.HttpUtility]::UrlEncode($_.name)
-            Invoke-KanbanflowApi -Method "Delete" -ApiToken $ApiToken -Command "tasks/$taskId/subtasks/by-name/$encodedByName" -Data $data
+            Invoke-KBFApi -Method "Delete" -ApiToken $ApiToken -Command "tasks/$taskId/subtasks/by-name/$encodedByName" -Data $data
         }
         "ByIndex"  { 
-            Invoke-KanbanflowApi -Method "Delete" -ApiToken $ApiToken -Command "tasks/$taskId/subtasks/by-index/$ByIndex" -Data $data
+            Invoke-KBFApi -Method "Delete" -ApiToken $ApiToken -Command "tasks/$taskId/subtasks/by-index/$ByIndex" -Data $data
         }
     } 
 }

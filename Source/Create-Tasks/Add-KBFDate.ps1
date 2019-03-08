@@ -20,6 +20,6 @@ function Add-KBFDate {
     $data | Add-Member NoteProperty -Name targetColumnId -Value $targetColumnId
     $data | Add-Member NoteProperty -Name status -Value $status
     
-    Invoke-KanbanflowApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/dates" -Data $data
+    Invoke-KBFApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/dates" -Data $data
 
 }

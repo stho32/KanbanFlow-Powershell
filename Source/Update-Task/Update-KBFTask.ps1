@@ -22,5 +22,5 @@ function Update-KBFTask {
     $data = New-Object psobject
     $data | Add-Member NoteProperty -Name "name" -Value $NewTaskName
 
-    Invoke-KanbanflowApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$TaskId" -data $data
+    Invoke-KBFApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$TaskId" -data $data
 }

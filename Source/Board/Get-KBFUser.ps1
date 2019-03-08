@@ -13,6 +13,6 @@ function Get-KBFUser {
     )
     
     process {
-        Invoke-KanbanflowApi -ApiToken $ApiToken -Method "Get" -Command "users"
+        Invoke-KBFApi -ApiToken $ApiToken -Method "Get" -Command "users"
     }
 }

@@ -25,10 +25,10 @@ function Update-KBFSubTask {
     {
         "ByName"  { 
             $encodedByName = [System.Web.HttpUtility]::UrlEncode($_.name)
-            Invoke-KanbanflowApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/subtasks/by-name/$encodedByName" -Data $data
+            Invoke-KBFApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/subtasks/by-name/$encodedByName" -Data $data
         }
         "ByIndex"  { 
-            Invoke-KanbanflowApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/subtasks/by-index/$ByIndex" -Data $data
+            Invoke-KBFApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/subtasks/by-index/$ByIndex" -Data $data
         }
     } 
 }

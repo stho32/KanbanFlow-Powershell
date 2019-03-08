@@ -10,6 +10,6 @@ function Get-KBFSubTask {
         [string]$taskId        
     )
 
-    Invoke-KanbanflowApi -Method "Get" -ApiToken $ApiToken -Command "tasks/$taskId/subtasks"
+    Invoke-KBFApi -Method "Get" -ApiToken $ApiToken -Command "tasks/$taskId/subtasks"
 
 }

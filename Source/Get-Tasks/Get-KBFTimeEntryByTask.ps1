@@ -10,6 +10,6 @@ function Get-KBFTimeEntryByTask {
         [string]$taskId        
     )
 
-    Invoke-KanbanflowApi -Method "Get" -ApiToken $ApiToken -Command "tasks/$taskId/time-entries"
+    Invoke-KBFApi -Method "Get" -ApiToken $ApiToken -Command "tasks/$taskId/time-entries"
 
 }

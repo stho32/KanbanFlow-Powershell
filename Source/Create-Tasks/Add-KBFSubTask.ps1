@@ -17,6 +17,6 @@ function Add-KBFSubTask {
     $data | Add-Member NoteProperty -Name name -Value $name
     $data | Add-Member NoteProperty -Name finished -Value $finished
     
-    Invoke-KanbanflowApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/subtasks" -Data $data
+    Invoke-KBFApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/subtasks" -Data $data
 
 }

@@ -10,6 +10,6 @@ function Get-KBFAttachment {
         [string]$taskId        
     )
 
-    Invoke-KanbanflowApi -Method "Get" -ApiToken $ApiToken -Command "tasks/$taskId/attachments"
+    Invoke-KBFApi -Method "Get" -ApiToken $ApiToken -Command "tasks/$taskId/attachments"
 
 }

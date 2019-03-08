@@ -17,6 +17,6 @@ function Add-KBFLabel {
     $data | Add-Member NoteProperty -Name name -Value $name
     $data | Add-Member NoteProperty -Name pinned -Value $pinned
     
-    Invoke-KanbanflowApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/labels" -Data $data
+    Invoke-KBFApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/labels" -Data $data
 
 }

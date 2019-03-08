@@ -21,6 +21,6 @@ function Get-KBFEvent {
     $parameter | Add-Member NoteProperty -Name from -Value $fromAsString
     $parameter | Add-Member NoteProperty -Name to -Value $toAsString
     
-    (Invoke-KanbanflowApi -ApiToken $ApiToken -Method "Get" -Command "board/events" -Parameters $parameter).events
+    (Invoke-KBFApi -ApiToken $ApiToken -Method "Get" -Command "board/events" -Parameters $parameter).events
 
 }

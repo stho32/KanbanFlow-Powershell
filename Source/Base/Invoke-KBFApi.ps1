@@ -1,4 +1,4 @@
-function Invoke-KBFApi {
+function Invoke-Invoke-Invoke-KBFApi {
     <#
         .SYNOPSIS
         Issues a get command to the kanbanflow api

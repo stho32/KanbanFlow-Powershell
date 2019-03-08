@@ -10,6 +10,6 @@ function Get-KBFLabel {
         [string]$taskId        
     )
 
-    Invoke-KanbanflowApi -Method "Get" -ApiToken $ApiToken -Command "tasks/$taskId/labels"
+    Invoke-KBFApi -Method "Get" -ApiToken $ApiToken -Command "tasks/$taskId/labels"
 
 }

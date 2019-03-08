@@ -10,6 +10,6 @@ function Get-KBFCollaborator {
         [string]$taskId        
     )
 
-    Invoke-KanbanflowApi -Method "Get" -ApiToken $ApiToken -Command "tasks/$taskId/collaborators"
+    Invoke-KBFApi -Method "Get" -ApiToken $ApiToken -Command "tasks/$taskId/collaborators"
 
 }

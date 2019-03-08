@@ -20,6 +20,6 @@ function Add-KBFComment {
     $data | Add-Member NoteProperty -Name authorUserId -Value $authorUserId
     $data | Add-Member NoteProperty -Name createdTimestamp -Value $createdTimestamp
     
-    Invoke-KanbanflowApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/comments" -Data $data
+    Invoke-KBFApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/comments" -Data $data
 
 }

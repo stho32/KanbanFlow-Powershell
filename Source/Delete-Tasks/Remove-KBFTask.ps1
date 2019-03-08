@@ -20,6 +20,6 @@ function Remove-KBFTask {
     )
     
     process {
-        Invoke-KanbanflowApi -Method "Delete" -ApiToken $ApiToken -Command "tasks/$_id"
+        Invoke-KBFApi -Method "Delete" -ApiToken $ApiToken -Command "tasks/$_id"
     }
 }

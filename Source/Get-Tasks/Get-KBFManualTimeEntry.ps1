@@ -10,5 +10,5 @@ function Get-KBFManualTimeEntry {
         [string]$taskId        
     )
 
-    Invoke-KanbanflowApi -Method "Get" -ApiToken $ApiToken -Command "tasks/$taskId/manual-time-entries"
+    Invoke-KBFApi -Method "Get" -ApiToken $ApiToken -Command "tasks/$taskId/manual-time-entries"
 }

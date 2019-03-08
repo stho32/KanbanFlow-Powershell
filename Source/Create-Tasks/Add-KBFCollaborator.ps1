@@ -15,6 +15,6 @@ function Add-KBFCollaborator {
     $data = New-Object PSObject
     $data | Add-Member NoteProperty -Name userId -Value $userId
     
-    Invoke-KanbanflowApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/collaborators" -Data $data
+    Invoke-KBFApi -Method "Post" -ApiToken $ApiToken -Command "tasks/$taskId/collaborators" -Data $data
 
 }

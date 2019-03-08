@@ -11,5 +11,5 @@ function Get-KBFComment {
         [string]$TaskId
     )
 
-    Invoke-KanbanflowApi -ApiToken $ApiToken -Method "Get" -Command "tasks/$TaskId/comments"
+    Invoke-KBFApi -ApiToken $ApiToken -Method "Get" -Command "tasks/$TaskId/comments"
 }
