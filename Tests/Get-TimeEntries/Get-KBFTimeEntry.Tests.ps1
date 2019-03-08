@@ -1,4 +1,4 @@
-Describe 'Get-TimeEntries' {
+Describe 'Get-KBFTimeEntry' {
 	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
 	. $PSScriptRoot/../../credentials-for-testing.ps1
 
@@ -10,7 +10,7 @@ Describe 'Get-TimeEntries' {
         $from = (Get-Date -Year 2018 -Month 5 -Day 6).Date
         $to = $from.AddDays(1).AddSeconds(-1)
 
-        $entries = Get-TimeEntries -From $from -To $to -ApiToken $testBoardApiToken
+        $entries = Get-KBFTimeEntry -From $from -To $to -ApiToken $testBoardApiToken
         Write-Host ($entries | ConvertTo-Json)
     }
 }

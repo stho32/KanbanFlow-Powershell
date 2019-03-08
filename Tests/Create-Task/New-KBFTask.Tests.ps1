@@ -3,7 +3,7 @@ Describe 'New-KBFTask' {
 	. $PSScriptRoot/../../credentials-for-testing.ps1
 
     It 'can add a task with a name' {
-        $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
+        $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Hello world of Taskling!" -ColumnId $column 
         $taskDetail = Get-KBFTask -TaskId $task.taskId -ApiToken $testBoardApiToken
         $taskDetail.name | Should -Be "Hello world of Taskling!"
@@ -11,7 +11,7 @@ Describe 'New-KBFTask' {
     }
 
     It 'can add a task with a color' {
-        $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
+        $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Yellow" -ColumnId $column -Color "yellow"
         $taskDetail = Get-KBFTask -TaskId $task.taskId -ApiToken $testBoardApiToken
         $taskDetail.color | Should -Be "yellow"
@@ -30,7 +30,7 @@ Describe 'New-KBFTask' {
     }
 
     It 'can add a task with a description' {
-        $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
+        $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Yellow" -ColumnId $column -Description "This is very important!"
         $taskDetail = Get-KBFTask -TaskId $task.taskId -ApiToken $testBoardApiToken
         $taskDetail.description | Should -Be "This is very important!"
@@ -41,7 +41,7 @@ Describe 'New-KBFTask' {
     }
 
     It 'can add a task with a number' {
-        $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
+        $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
 
         $number = New-Object PSObject @{ prefix = "Ticket"; value = 10432 }
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Ticket-related (number)" -ColumnId $column -Number $number
@@ -57,7 +57,7 @@ Describe 'New-KBFTask' {
     }
     
     It 'can add a task with a responsible user' {
-        $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
+        $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
         $ResponsibleUserId = (Get-KBFUser -ApiToken $testBoardApiToken)._id
 
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Ticket with responsible user assigned" -ColumnId $column -ResponsibleUserId $ResponsibleUserId
@@ -66,7 +66,7 @@ Describe 'New-KBFTask' {
     }
 
     It 'can add a task with a time estimate' {
-        $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
+        $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
 
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Time estimate" -ColumnId $column -TotalSecondsEstimate 7200
         $taskDetail = Get-KBFTask -TaskId $task.taskId -ApiToken $testBoardApiToken
@@ -90,9 +90,9 @@ Describe 'New-KBFTask' {
 	#>
 
     It 'can add a task with a due date' {
-        $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
-        $targetColumn = (Get-Board -ApiToken $testBoardApiToken).columns[2].uniqueId
-        $dueDate = ((Get-Date).Date).AddDays(1) | ConvertTo-KanbanflowDateTime
+        $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
+        $targetColumn = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[2].uniqueId
+        $dueDate = ((Get-Date).Date).AddDays(1) | ConvertTo-KBFDateTime
         $dates = @(
             (New-Object PSObject @{ dueTimestamp = $dueDate; targetColumnId = $targetColumn })
         )
@@ -105,7 +105,7 @@ Describe 'New-KBFTask' {
     }
 
     It 'can add a task with subtasks' {
-        $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
+        $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
 
         $subtasks = @(
             (New-Object PSObject @{ name = "Abgeschlossen"; finished = $true }),
@@ -125,7 +125,7 @@ Describe 'New-KBFTask' {
     }
 
     It 'can add a task with labels' {
-        $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
+        $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
 
         $labels = @(
             (New-Object PSObject @{ name = "Pinned"; pinned = $true }),
@@ -144,7 +144,7 @@ Describe 'New-KBFTask' {
     }
 
     It 'can add a task with collaborators' {
-        $column = (Get-Board -ApiToken $testBoardApiToken).columns[0].uniqueId
+        $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
         $Collaborators = (Get-KBFUser -ApiToken $testBoardApiToken) | ForEach-Object {
             New-Object PSObject -Property @{ userId = $_._id }
         }

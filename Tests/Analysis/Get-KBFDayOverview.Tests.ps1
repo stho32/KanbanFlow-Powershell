@@ -69,7 +69,7 @@ Describe "Get-KBFDayOverview" {
 			
 			It 'creates an overview of all the time spent on the board at that day' {
 				$day = (Get-Date).Date.AddDays(-1)
-				$result = Get-KBFDayOverview -ApiToken $testBoardApiToken -Day $day
+				$result = Get-KBFDayOverview -ApiToken "Hello world" -Day $day
 				
 				$result[0].entryId | Should -Be "0bF10Q1"
 				$result[0].taskName | Should -Be "First Task"
