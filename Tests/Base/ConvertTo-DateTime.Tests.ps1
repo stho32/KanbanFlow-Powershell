@@ -16,11 +16,17 @@ Describe 'ConvertTo-DateTime' {
     }   
 
     it 'does not touch the contents of an input that already is a datetime' {
-	<#
-        $datetime = Get-Date -Year 2018 -Month 5 -Day 4 -Hour 23 -Minute 59 -Second 59
-        $asString = ConvertTo-KBFDateTime $datetime
-        $asString | Should -Be "2018-05-04T23:59:59Z"
-	#>
+		$datetime = Get-Date -Year 2018 -Month 5 -Day 4 -Hour 23 -Minute 59 -Second 59
+		$result = $datetime | ConvertTo-DateTime
+
+		$result        | Should -Be $datetime
+
+        $result.Year   | Should -Be $datetime.Year
+		$result.Month  | Should -Be $datetime.Month
+		$result.Day    | Should -Be $datetime.Day
+        $result.Hour   | Should -Be $datetime.Hour
+		$result.Minute | Should -Be $datetime.Minute
+		$result.Second | Should -Be $datetime.Second
     }  
 }
 
