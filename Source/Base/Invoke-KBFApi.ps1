@@ -41,10 +41,13 @@ function Invoke-KBFApi {
                 $url = $url + $ParametersEncoded
             }
 
-            Invoke-RestMethod `
-                -Method Get `
-                -Headers $authentication `
-                -Uri $url
+            $result = Invoke-RestMethod `
+						-Method Get `
+						-Headers $authentication `
+						-Uri $url
+			
+			Write-Verbose ($result | ConvertTo-Json)
+			$result
         }
 
         if ( $Method -eq "Post" ) {

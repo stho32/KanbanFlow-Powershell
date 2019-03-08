@@ -21,6 +21,6 @@ function Get-KBFTimeEntry {
         }
         
         $result = Invoke-KBFApi -ApiToken $ApiToken -Method "Get" -Command "time-entries" -Parameters $parameter
-		$result.value
+		$result
     }
 }
