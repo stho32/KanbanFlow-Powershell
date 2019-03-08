@@ -15,6 +15,8 @@ you a simple access to that api, including some additional analytics.
 Since Powershell is available on windows by default, because it is the "new shell" and with Powershell Core (PS6) 
 being available cross platform, there is nothing in your way to instantly start automating and integrating your kanban boards.
 
+[Get the api documentation here.](https://stho32.github.io/KanbanFlow-Powershell/docfx_project/site/articles/index.html)
+
 ### Example 1: Add a task to the first column of the board
 
 (You can set every attribute possible with the ui. See `help New-KBFTask` for all parameters.)
@@ -70,7 +72,7 @@ NBQadn  stopwatch dkfonIOcneo HZa78qwD 2019-03-07T15:24:30Z     2019-03-07T16:45
 U13qey  stopwatch LciwBicw98w sLa7R7u4 2019-03-07T17:08:44Z     2019-03-07T18:01:19Z             0 Some Tasks name                53 yellow 
 ```
 
-### For more examples and Cmdlets
+### For more examples and cmdlets
 
 For more examples have a look at the documentation and the unit tests.
 
