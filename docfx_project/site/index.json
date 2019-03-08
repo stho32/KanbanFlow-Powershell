@@ -1,202 +1,202 @@
 {
-  "index.html": {
-    "href": "index.html",
-    "title": "Kanbanflow Powershell Module",
-    "keywords": "Kanbanflow Powershell Module This powershell module gives you access to the kanbanflow api making it easy to integrate it with administrative tasks, devops tasks and your general self organization. It is compatible from Powershell 5 and 6 alike so use it from Windows, Linux or Mac. Create Tasks from events, log entries, ... Write your own automated analysis of your work ... Visualize workflows or information in other systems by converting it into a nice kanban board Look into the \"Documentation\" link up there in the header to find a nice searchable help generated directly from the help content which is also embedded in the module itself and thus available from powershell command line as well."
-  },
-  "articles/index.html": {
-    "href": "articles/index.html",
-    "title": "Kanbanflow Module",
-    "keywords": "Kanbanflow Module Use the navigation or the full text search to find everything you need."
-  },
-  "articles/Base/ConvertTo-KBFDateTime.html": {
-    "href": "articles/Base/ConvertTo-KBFDateTime.html",
-    "title": "ConvertTo-KBFDateTime",
-    "keywords": "ConvertTo-KBFDateTime Converts a datetime to the date format of the Kanbanflow API Converts a Datetime into the representation that kanbanflow understands, e.g. 2013-12-31T09:00:00Z To get the full information type PS> Get-Help ."
-  },
-  "articles/Board/Get-KBFBoard.html": {
-    "href": "articles/Board/Get-KBFBoard.html",
-    "title": "Get-KBFBoard",
-    "keywords": "Get-KBFBoard Get Kanbanflow Board Gets all information for a kanbanflow board which means that you get color and structure information but you do not get the task info. Example Nr. 1 Get-Board -ApiToken $ApiToken To get the full information type PS> Get-Help ."
-  },
-  "articles/Create-Tasks/Add-KBFComment.html": {
-    "href": "articles/Create-Tasks/Add-KBFComment.html",
-    "title": "Add-KBFComment",
-    "keywords": "Add-KBFComment Add a collaborator to a card To get the full information type PS> Get-Help ."
-  },
-  "articles/Create-Tasks/New-KBFTask.html": {
-    "href": "articles/Create-Tasks/New-KBFTask.html",
-    "title": "New-KBFTask",
-    "keywords": "New-KBFTask Creates a new on a Kanbanflow board Example Nr. 1 New-KBFTask -Name \"Hello world\" -ColumnId $todoColumn -ApiToken $apiToken To get the full information type PS> Get-Help ."
-  },
-  "articles/Events/Get-KBFEvent.html": {
-    "href": "articles/Events/Get-KBFEvent.html",
-    "title": "Get-KBFEvent",
-    "keywords": "Get-KBFEvent Get the event entries from a board e.g. to find out which tasks are new today To get the full information type PS> Get-Help ."
-  },
-  "articles/Get-Tasks/Get-KBFComment.html": {
-    "href": "articles/Get-Tasks/Get-KBFComment.html",
-    "title": "Get-KBFComment",
-    "keywords": "Get-KBFComment Get comments of a task by their task id To get the full information type PS> Get-Help ."
-  },
-  "articles/Get-Tasks/Get-KBFSubTask.html": {
-    "href": "articles/Get-Tasks/Get-KBFSubTask.html",
-    "title": "Get-KBFSubTask",
-    "keywords": "Get-KBFSubTask Grab all subtasks from a task To get the full information type PS> Get-Help ."
-  },
-  "articles/Get-TimeEntries/Get-KBFTimeEntry.html": {
-    "href": "articles/Get-TimeEntries/Get-KBFTimeEntry.html",
-    "title": "Get-KBFTimeEntry",
-    "keywords": "Get-KBFTimeEntry Get all time entries that are available To get the full information type PS> Get-Help ."
-  },
-  "articles/Html/Convert-KBFSubtasksToHtml.html": {
-    "href": "articles/Html/Convert-KBFSubtasksToHtml.html",
-    "title": "Convert-KBFSubtasksToHtml",
-    "keywords": "Convert-KBFSubtasksToHtml Converts subtasks given by parameter into a html list. To get the full information type PS> Get-Help ."
-  },
-  "articles/Base/ConvertTo-UrlParameters.html": {
-    "href": "articles/Base/ConvertTo-UrlParameters.html",
-    "title": "ConvertTo-UrlParameters",
-    "keywords": "ConvertTo-UrlParameters Converts a custom object to correctly encoded url parameters When I need a lot of url parameters this function helps me with encoding and concatenating them using ? and &. Example Nr. 1 $urlExtension = ConvertTo-UrlParameters $data To get the full information type PS> Get-Help ."
-  },
-  "articles/Base/Wait-KBFApiLimitBrake.html": {
-    "href": "articles/Base/Wait-KBFApiLimitBrake.html",
-    "title": "Wait-KBFApiLimitBrake",
-    "keywords": "Wait-KBFApiLimitBrake Waits for a small amount of time to that we do not reach the api limit of the board as fast Example Nr. 1 Wait-KBFApiLimitBrake To get the full information type PS> Get-Help ."
-  },
-  "articles/Create-Tasks/Add-KBFCollaborator.html": {
-    "href": "articles/Create-Tasks/Add-KBFCollaborator.html",
-    "title": "Add-KBFCollaborator",
-    "keywords": "Add-KBFCollaborator Add a collaborator to a card To get the full information type PS> Get-Help ."
-  },
-  "articles/Create-Tasks/Add-KBFSubTask.html": {
-    "href": "articles/Create-Tasks/Add-KBFSubTask.html",
-    "title": "Add-KBFSubTask",
-    "keywords": "Add-KBFSubTask Create a subtask To get the full information type PS> Get-Help ."
-  },
-  "articles/Delete-Tasks/Remove-KBFSubTask.html": {
-    "href": "articles/Delete-Tasks/Remove-KBFSubTask.html",
-    "title": "Remove-KBFSubTask",
-    "keywords": "Remove-KBFSubTask Delete a subtask by name or id To get the full information type PS> Get-Help ."
-  },
-  "articles/Get-Tasks/Get-KBFAttachment.html": {
-    "href": "articles/Get-Tasks/Get-KBFAttachment.html",
-    "title": "Get-KBFAttachment",
-    "keywords": "Get-KBFAttachment Grab all attachments from a task To get the full information type PS> Get-Help ."
-  },
-  "articles/Get-Tasks/Get-KBFCollaborator.html": {
-    "href": "articles/Get-Tasks/Get-KBFCollaborator.html",
-    "title": "Get-KBFCollaborator",
-    "keywords": "Get-KBFCollaborator Grab all collaborators from a task To get the full information type PS> Get-Help ."
-  },
-  "articles/Get-Tasks/Get-KBFTaskByNumber.html": {
-    "href": "articles/Get-Tasks/Get-KBFTaskByNumber.html",
-    "title": "Get-KBFTaskByNumber",
-    "keywords": "Get-KBFTaskByNumber Get Task by its number To get the full information type PS> Get-Help ."
-  },
-  "articles/Get-Tasks/Get-KBFTimeEntryByTask.html": {
-    "href": "articles/Get-Tasks/Get-KBFTimeEntryByTask.html",
-    "title": "Get-KBFTimeEntryByTask",
-    "keywords": "Get-KBFTimeEntryByTask Grab all time-entries from a task To get the full information type PS> Get-Help ."
-  },
-  "articles/Update-Task/Update-KBFTask.html": {
-    "href": "articles/Update-Task/Update-KBFTask.html",
-    "title": "Update-KBFTask",
-    "keywords": "Update-KBFTask Update the name of a task Update a task name on a kanban board by taskId Example Nr. 1 Update-Task -ApiToken \"...\" -TaskId \"...\" -NewTaskName \"New task name\" To get the full information type PS> Get-Help ."
-  },
-  "articles/Analysis/Get-KBFTimeUsageOverview.html": {
-    "href": "articles/Analysis/Get-KBFTimeUsageOverview.html",
-    "title": "Get-KBFTimeUsageOverview",
-    "keywords": "Get-KBFTimeUsageOverview Creates a time usage overview for a time span We do a weekly reporting about our time usage. And that is what this is for. You can give that function a time span. Do not care about the time part on the datetimes you pass in. The function will remove the time part and make sure both days are fully included. To get the full information type PS> Get-Help ."
-  },
-  "articles/Base/New-KBFAuthHeader.html": {
-    "href": "articles/Base/New-KBFAuthHeader.html",
-    "title": "New-KBFAuthHeader",
-    "keywords": "New-KBFAuthHeader Create a base64 auth header for Kanbanflow authentication Kanbanflow recommends using base64 encoded authentication that is embedded within the header of requests. This function takes in an ApiToken and generates a Hashtable which can be passed as Header to Invoke-RestMethod. Example Nr. 1 $headers = New-KBFAuthHeader -ApiToken \"...\" To get the full information type PS> Get-Help ."
-  },
-  "articles/Board/Get-KBFBoardColumn.html": {
-    "href": "articles/Board/Get-KBFBoardColumn.html",
-    "title": "Get-KBFBoardColumn",
-    "keywords": "Get-KBFBoardColumn Grabs the unique id from a column label Example Nr. 1 $columnTodo = Get-KanbanflowBoardColumnUniqueId -ApiToken $testBoardApiToken -Name \"To-Do\" To get the full information type PS> Get-Help ."
-  },
-  "articles/Create-Tasks/Add-KBFDate.html": {
-    "href": "articles/Create-Tasks/Add-KBFDate.html",
-    "title": "Add-KBFDate",
-    "keywords": "Add-KBFDate Create a Date To get the full information type PS> Get-Help ."
-  },
-  "articles/Delete-Tasks/Remove-KBFTask.html": {
-    "href": "articles/Delete-Tasks/Remove-KBFTask.html",
-    "title": "Remove-KBFTask",
-    "keywords": "Remove-KBFTask Removes a task from a kanbanflow board Example Nr. 1 $tasks | Remove-KBFTask -ApiToken $apiToken Example Nr. 2 Remove-KBFTask -ApiToken $apiToken -Id $id To get the full information type PS> Get-Help ."
-  },
-  "articles/Get-Tasks/Get-KBFDate.html": {
-    "href": "articles/Get-Tasks/Get-KBFDate.html",
-    "title": "Get-KBFDate",
-    "keywords": "Get-KBFDate Grab all dates from a task To get the full information type PS> Get-Help ."
-  },
-  "articles/Get-Tasks/Get-KBFTask.html": {
-    "href": "articles/Get-Tasks/Get-KBFTask.html",
-    "title": "Get-KBFTask",
-    "keywords": "Get-KBFTask Get a task by its ID To get the full information type PS> Get-Help ."
-  },
-  "articles/Analysis/Get-KBFDayOverview.html": {
-    "href": "articles/Analysis/Get-KBFDayOverview.html",
-    "title": "Get-KBFDayOverview",
-    "keywords": "Get-KBFDayOverview Grabs all time entries, groups them as report Sometimes you have to report what your day was like. No problem if you used the kanbanflow timer features. Example Nr. 1 Get-KBFDayOverview -ApiToken $board -Day ((Get-Date).Date) To get the full information type PS> Get-Help ."
-  },
-  "articles/Base/ConvertTo-DateTime.html": {
-    "href": "articles/Base/ConvertTo-DateTime.html",
-    "title": "ConvertTo-DateTime",
-    "keywords": "ConvertTo-DateTime Converts a string into a datetime If the InputObject is a string, it'll be converted into a DateTime. But if it is a DateTime, it wont be touched. It just will be passed through. This is needed to make this library compatible for Powershell 5. Powershell 6 automatically recognizes DateTimes and converts them from the kanbanflow format into normal DateTimes. But Powershell 5 does not. Example Nr. 1 \"2019-02-28T00:00:00Z\" | ConvertTo-DateTime To get the full information type PS> Get-Help ."
-  },
-  "articles/Analysis/Format-KBFDayOverview.html": {
-    "href": "articles/Analysis/Format-KBFDayOverview.html",
-    "title": "Format-KBFDayOverview",
-    "keywords": "Format-KBFDayOverview Formats the output of Get-KBFDayOverview in a better way Example Nr. 1 Get-KBFDayOverview -ApiToken $board -Day ((Get-Date).Date) | Format-KBFDayOverview -Format Text To get the full information type PS> Get-Help ."
-  },
-  "articles/Analysis/Get-KBFTimeUsageTable.html": {
-    "href": "articles/Analysis/Get-KBFTimeUsageTable.html",
-    "title": "Get-KBFTimeUsageTable",
-    "keywords": "Get-KBFTimeUsageTable Creates a time usage table for a time span You get just the users as well as their time spent grouped by color of the task To get the full information type PS> Get-Help ."
-  },
-  "articles/Base/Invoke-KBFApi.html": {
-    "href": "articles/Base/Invoke-KBFApi.html",
-    "title": "Invoke-KBFApi",
-    "keywords": "Invoke-KBFApi Issues a get command to the kanbanflow api The Kanbanflow API accepts the following command types: GET, POST and DELETE. This function encapsulates everything that is needed for a valid request. To get the full information type PS> Get-Help ."
-  },
-  "articles/Board/Clear-KBFBoard.html": {
-    "href": "articles/Board/Clear-KBFBoard.html",
-    "title": "Clear-KBFBoard",
-    "keywords": "Clear-KBFBoard Removes all tasks from a board Sometimes you like a board but there are a lot of tasks on it. Example Nr. 1 Clear-KBFBoard -ApiToken $apiToken To get the full information type PS> Get-Help ."
-  },
-  "articles/Board/Get-KBFUser.html": {
-    "href": "articles/Board/Get-KBFUser.html",
-    "title": "Get-KBFUser",
-    "keywords": "Get-KBFUser Grabs the list of users from the board Example Nr. 1 Get-KBFUser -ApiToken $apiToken To get the full information type PS> Get-Help ."
-  },
-  "articles/Create-Tasks/Add-KBFLabel.html": {
-    "href": "articles/Create-Tasks/Add-KBFLabel.html",
-    "title": "Add-KBFLabel",
-    "keywords": "Add-KBFLabel Create a label To get the full information type PS> Get-Help ."
-  },
-  "articles/Events/Get-KBFNewTask.html": {
-    "href": "articles/Events/Get-KBFNewTask.html",
-    "title": "Get-KBFNewTask",
-    "keywords": "Get-KBFNewTask Using the events from a kanban board, grab me a list of all tasks that have been created in a certain time range (The tasks can only be loaded when they still exist. If they do not exist anymore, they will be omitted.) To get the full information type PS> Get-Help ."
-  },
-  "articles/Get-Tasks/Get-KBFLabel.html": {
-    "href": "articles/Get-Tasks/Get-KBFLabel.html",
-    "title": "Get-KBFLabel",
-    "keywords": "Get-KBFLabel Grab all labels from a task To get the full information type PS> Get-Help ."
+  "articles/Update-Task/Update-KBFSubTask.html": {
+    "href": "articles/Update-Task/Update-KBFSubTask.html",
+    "title": "Update-KBFSubTask",
+    "keywords": "Update-KBFSubTask Update a subtask by name or id To get the full information type PS> Get-Help ."
   },
   "articles/Get-Tasks/Get-KBFManualTimeEntry.html": {
     "href": "articles/Get-Tasks/Get-KBFManualTimeEntry.html",
     "title": "Get-KBFManualTimeEntry",
     "keywords": "Get-KBFManualTimeEntry Grab all manual-time-entries from a task To get the full information type PS> Get-Help ."
   },
-  "articles/Update-Task/Update-KBFSubTask.html": {
-    "href": "articles/Update-Task/Update-KBFSubTask.html",
-    "title": "Update-KBFSubTask",
-    "keywords": "Update-KBFSubTask Update a subtask by name or id To get the full information type PS> Get-Help ."
+  "articles/Get-Tasks/Get-KBFLabel.html": {
+    "href": "articles/Get-Tasks/Get-KBFLabel.html",
+    "title": "Get-KBFLabel",
+    "keywords": "Get-KBFLabel Grab all labels from a task To get the full information type PS> Get-Help ."
+  },
+  "articles/Events/Get-KBFNewTask.html": {
+    "href": "articles/Events/Get-KBFNewTask.html",
+    "title": "Get-KBFNewTask",
+    "keywords": "Get-KBFNewTask Using the events from a kanban board, grab me a list of all tasks that have been created in a certain time range (The tasks can only be loaded when they still exist. If they do not exist anymore, they will be omitted.) To get the full information type PS> Get-Help ."
+  },
+  "articles/Create-Tasks/Add-KBFLabel.html": {
+    "href": "articles/Create-Tasks/Add-KBFLabel.html",
+    "title": "Add-KBFLabel",
+    "keywords": "Add-KBFLabel Create a label To get the full information type PS> Get-Help ."
+  },
+  "articles/Board/Get-KBFUser.html": {
+    "href": "articles/Board/Get-KBFUser.html",
+    "title": "Get-KBFUser",
+    "keywords": "Get-KBFUser Grabs the list of users from the board Example Nr. 1 Get-KBFUser -ApiToken $apiToken To get the full information type PS> Get-Help ."
+  },
+  "articles/Board/Clear-KBFBoard.html": {
+    "href": "articles/Board/Clear-KBFBoard.html",
+    "title": "Clear-KBFBoard",
+    "keywords": "Clear-KBFBoard Removes all tasks from a board Sometimes you like a board but there are a lot of tasks on it. Example Nr. 1 Clear-KBFBoard -ApiToken $apiToken To get the full information type PS> Get-Help ."
+  },
+  "articles/Base/Invoke-KBFApi.html": {
+    "href": "articles/Base/Invoke-KBFApi.html",
+    "title": "Invoke-KBFApi",
+    "keywords": "Invoke-KBFApi Issues a get command to the kanbanflow api The Kanbanflow API accepts the following command types: GET, POST and DELETE. This function encapsulates everything that is needed for a valid request. To get the full information type PS> Get-Help ."
+  },
+  "articles/Analysis/Get-KBFTimeUsageTable.html": {
+    "href": "articles/Analysis/Get-KBFTimeUsageTable.html",
+    "title": "Get-KBFTimeUsageTable",
+    "keywords": "Get-KBFTimeUsageTable Creates a time usage table for a time span You get just the users as well as their time spent grouped by color of the task To get the full information type PS> Get-Help ."
+  },
+  "articles/Analysis/Format-KBFDayOverview.html": {
+    "href": "articles/Analysis/Format-KBFDayOverview.html",
+    "title": "Format-KBFDayOverview",
+    "keywords": "Format-KBFDayOverview Formats the output of Get-KBFDayOverview in a better way Example Nr. 1 Get-KBFDayOverview -ApiToken $board -Day ((Get-Date).Date) | Format-KBFDayOverview -Format Text To get the full information type PS> Get-Help ."
+  },
+  "articles/Base/ConvertTo-DateTime.html": {
+    "href": "articles/Base/ConvertTo-DateTime.html",
+    "title": "ConvertTo-DateTime",
+    "keywords": "ConvertTo-DateTime Converts a string into a datetime If the InputObject is a string, it'll be converted into a DateTime. But if it is a DateTime, it wont be touched. It just will be passed through. This is needed to make this library compatible for Powershell 5. Powershell 6 automatically recognizes DateTimes and converts them from the kanbanflow format into normal DateTimes. But Powershell 5 does not. Example Nr. 1 \"2019-02-28T00:00:00Z\" | ConvertTo-DateTime To get the full information type PS> Get-Help ."
+  },
+  "articles/Analysis/Get-KBFDayOverview.html": {
+    "href": "articles/Analysis/Get-KBFDayOverview.html",
+    "title": "Get-KBFDayOverview",
+    "keywords": "Get-KBFDayOverview Grabs all time entries, groups them as report Sometimes you have to report what your day was like. No problem if you used the kanbanflow timer features. Example Nr. 1 Get-KBFDayOverview -ApiToken $board -Day ((Get-Date).Date) To get the full information type PS> Get-Help ."
+  },
+  "articles/Get-Tasks/Get-KBFTask.html": {
+    "href": "articles/Get-Tasks/Get-KBFTask.html",
+    "title": "Get-KBFTask",
+    "keywords": "Get-KBFTask Get a task by its ID To get the full information type PS> Get-Help ."
+  },
+  "articles/Get-Tasks/Get-KBFDate.html": {
+    "href": "articles/Get-Tasks/Get-KBFDate.html",
+    "title": "Get-KBFDate",
+    "keywords": "Get-KBFDate Grab all dates from a task To get the full information type PS> Get-Help ."
+  },
+  "articles/Delete-Tasks/Remove-KBFTask.html": {
+    "href": "articles/Delete-Tasks/Remove-KBFTask.html",
+    "title": "Remove-KBFTask",
+    "keywords": "Remove-KBFTask Removes a task from a kanbanflow board Example Nr. 1 $tasks | Remove-KBFTask -ApiToken $apiToken Example Nr. 2 Remove-KBFTask -ApiToken $apiToken -Id $id To get the full information type PS> Get-Help ."
+  },
+  "articles/Create-Tasks/Add-KBFDate.html": {
+    "href": "articles/Create-Tasks/Add-KBFDate.html",
+    "title": "Add-KBFDate",
+    "keywords": "Add-KBFDate Create a Date To get the full information type PS> Get-Help ."
+  },
+  "articles/Board/Get-KBFBoardColumn.html": {
+    "href": "articles/Board/Get-KBFBoardColumn.html",
+    "title": "Get-KBFBoardColumn",
+    "keywords": "Get-KBFBoardColumn Grabs the unique id from a column label Example Nr. 1 $columnTodo = Get-KanbanflowBoardColumnUniqueId -ApiToken $testBoardApiToken -Name \"To-Do\" To get the full information type PS> Get-Help ."
+  },
+  "articles/Base/New-KBFAuthHeader.html": {
+    "href": "articles/Base/New-KBFAuthHeader.html",
+    "title": "New-KBFAuthHeader",
+    "keywords": "New-KBFAuthHeader Create a base64 auth header for Kanbanflow authentication Kanbanflow recommends using base64 encoded authentication that is embedded within the header of requests. This function takes in an ApiToken and generates a Hashtable which can be passed as Header to Invoke-RestMethod. Example Nr. 1 $headers = New-KBFAuthHeader -ApiToken \"...\" To get the full information type PS> Get-Help ."
+  },
+  "articles/Analysis/Get-KBFTimeUsageOverview.html": {
+    "href": "articles/Analysis/Get-KBFTimeUsageOverview.html",
+    "title": "Get-KBFTimeUsageOverview",
+    "keywords": "Get-KBFTimeUsageOverview Creates a time usage overview for a time span We do a weekly reporting about our time usage. And that is what this is for. You can give that function a time span. Do not care about the time part on the datetimes you pass in. The function will remove the time part and make sure both days are fully included. To get the full information type PS> Get-Help ."
+  },
+  "articles/Update-Task/Update-KBFTask.html": {
+    "href": "articles/Update-Task/Update-KBFTask.html",
+    "title": "Update-KBFTask",
+    "keywords": "Update-KBFTask Update the name of a task Update a task name on a kanban board by taskId Example Nr. 1 Update-Task -ApiToken \"...\" -TaskId \"...\" -NewTaskName \"New task name\" To get the full information type PS> Get-Help ."
+  },
+  "articles/Get-Tasks/Get-KBFTimeEntryByTask.html": {
+    "href": "articles/Get-Tasks/Get-KBFTimeEntryByTask.html",
+    "title": "Get-KBFTimeEntryByTask",
+    "keywords": "Get-KBFTimeEntryByTask Grab all time-entries from a task To get the full information type PS> Get-Help ."
+  },
+  "articles/Get-Tasks/Get-KBFTaskByNumber.html": {
+    "href": "articles/Get-Tasks/Get-KBFTaskByNumber.html",
+    "title": "Get-KBFTaskByNumber",
+    "keywords": "Get-KBFTaskByNumber Get Task by its number To get the full information type PS> Get-Help ."
+  },
+  "articles/Get-Tasks/Get-KBFCollaborator.html": {
+    "href": "articles/Get-Tasks/Get-KBFCollaborator.html",
+    "title": "Get-KBFCollaborator",
+    "keywords": "Get-KBFCollaborator Grab all collaborators from a task To get the full information type PS> Get-Help ."
+  },
+  "articles/Get-Tasks/Get-KBFAttachment.html": {
+    "href": "articles/Get-Tasks/Get-KBFAttachment.html",
+    "title": "Get-KBFAttachment",
+    "keywords": "Get-KBFAttachment Grab all attachments from a task To get the full information type PS> Get-Help ."
+  },
+  "articles/Delete-Tasks/Remove-KBFSubTask.html": {
+    "href": "articles/Delete-Tasks/Remove-KBFSubTask.html",
+    "title": "Remove-KBFSubTask",
+    "keywords": "Remove-KBFSubTask Delete a subtask by name or id To get the full information type PS> Get-Help ."
+  },
+  "articles/Create-Tasks/Add-KBFSubTask.html": {
+    "href": "articles/Create-Tasks/Add-KBFSubTask.html",
+    "title": "Add-KBFSubTask",
+    "keywords": "Add-KBFSubTask Create a subtask To get the full information type PS> Get-Help ."
+  },
+  "articles/Create-Tasks/Add-KBFCollaborator.html": {
+    "href": "articles/Create-Tasks/Add-KBFCollaborator.html",
+    "title": "Add-KBFCollaborator",
+    "keywords": "Add-KBFCollaborator Add a collaborator to a card To get the full information type PS> Get-Help ."
+  },
+  "articles/Base/Wait-KBFApiLimitBrake.html": {
+    "href": "articles/Base/Wait-KBFApiLimitBrake.html",
+    "title": "Wait-KBFApiLimitBrake",
+    "keywords": "Wait-KBFApiLimitBrake Waits for a small amount of time to that we do not reach the api limit of the board as fast Example Nr. 1 Wait-KBFApiLimitBrake To get the full information type PS> Get-Help ."
+  },
+  "articles/Base/ConvertTo-UrlParameters.html": {
+    "href": "articles/Base/ConvertTo-UrlParameters.html",
+    "title": "ConvertTo-UrlParameters",
+    "keywords": "ConvertTo-UrlParameters Converts a custom object to correctly encoded url parameters When I need a lot of url parameters this function helps me with encoding and concatenating them using ? and &. Example Nr. 1 $urlExtension = ConvertTo-UrlParameters $data To get the full information type PS> Get-Help ."
+  },
+  "articles/Html/Convert-KBFSubtasksToHtml.html": {
+    "href": "articles/Html/Convert-KBFSubtasksToHtml.html",
+    "title": "Convert-KBFSubtasksToHtml",
+    "keywords": "Convert-KBFSubtasksToHtml Converts subtasks given by parameter into a html list. To get the full information type PS> Get-Help ."
+  },
+  "articles/Get-TimeEntries/Get-KBFTimeEntry.html": {
+    "href": "articles/Get-TimeEntries/Get-KBFTimeEntry.html",
+    "title": "Get-KBFTimeEntry",
+    "keywords": "Get-KBFTimeEntry Get all time entries that are available To get the full information type PS> Get-Help ."
+  },
+  "articles/Get-Tasks/Get-KBFSubTask.html": {
+    "href": "articles/Get-Tasks/Get-KBFSubTask.html",
+    "title": "Get-KBFSubTask",
+    "keywords": "Get-KBFSubTask Grab all subtasks from a task To get the full information type PS> Get-Help ."
+  },
+  "articles/Get-Tasks/Get-KBFComment.html": {
+    "href": "articles/Get-Tasks/Get-KBFComment.html",
+    "title": "Get-KBFComment",
+    "keywords": "Get-KBFComment Get comments of a task by their task id To get the full information type PS> Get-Help ."
+  },
+  "articles/Events/Get-KBFEvent.html": {
+    "href": "articles/Events/Get-KBFEvent.html",
+    "title": "Get-KBFEvent",
+    "keywords": "Get-KBFEvent Get the event entries from a board e.g. to find out which tasks are new today To get the full information type PS> Get-Help ."
+  },
+  "articles/Create-Tasks/New-KBFTask.html": {
+    "href": "articles/Create-Tasks/New-KBFTask.html",
+    "title": "New-KBFTask",
+    "keywords": "New-KBFTask Creates a new on a Kanbanflow board Example Nr. 1 New-KBFTask -Name \"Hello world\" -ColumnId $todoColumn -ApiToken $apiToken To get the full information type PS> Get-Help ."
+  },
+  "articles/Create-Tasks/Add-KBFComment.html": {
+    "href": "articles/Create-Tasks/Add-KBFComment.html",
+    "title": "Add-KBFComment",
+    "keywords": "Add-KBFComment Add a collaborator to a card To get the full information type PS> Get-Help ."
+  },
+  "articles/Board/Get-KBFBoard.html": {
+    "href": "articles/Board/Get-KBFBoard.html",
+    "title": "Get-KBFBoard",
+    "keywords": "Get-KBFBoard Get Kanbanflow Board Gets all information for a kanbanflow board which means that you get color and structure information but you do not get the task info. Example Nr. 1 Get-Board -ApiToken $ApiToken To get the full information type PS> Get-Help ."
+  },
+  "articles/Base/ConvertTo-KBFDateTime.html": {
+    "href": "articles/Base/ConvertTo-KBFDateTime.html",
+    "title": "ConvertTo-KBFDateTime",
+    "keywords": "ConvertTo-KBFDateTime Converts a datetime to the date format of the Kanbanflow API Converts a Datetime into the representation that kanbanflow understands, e.g. 2013-12-31T09:00:00Z To get the full information type PS> Get-Help ."
+  },
+  "articles/index.html": {
+    "href": "articles/index.html",
+    "title": "Kanbanflow Module",
+    "keywords": "Kanbanflow Module This powershell module gives you access to the kanbanflow api making it easy to integrate it with administrative tasks, devops tasks and your general self organization. It is compatible from Powershell 5 and 6 alike so use it from Windows, Linux or Mac. Create Tasks from events, log entries, ... Write your own automated analysis of your work and work time, like e-mail messages for you and your boss... Visualize workflows or information in other systems by converting it into a nice kanban board Use the navigation or the full text search to find everything you need."
+  },
+  "index.html": {
+    "href": "index.html",
+    "title": "Kanbanflow Powershell Module",
+    "keywords": "Kanbanflow Powershell Module Look into the \"Documentation\" link up there in the header to find a nice searchable help generated directly from the help content which is also embedded in the module itself and thus available from powershell command line as well."
   }
 }

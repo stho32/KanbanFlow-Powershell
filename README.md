@@ -1,5 +1,5 @@
 # KanbanFlow-Powershell
+
 A powershell interface to kanbanflow (kanbanflow.com)
 
-There are not tests for everything yet, but I'm working on it. 
-
+[Get the api documentation here.](https://stho32.github.io/KanbanFlow-Powershell/docfx_project/site/articles/index.html)
