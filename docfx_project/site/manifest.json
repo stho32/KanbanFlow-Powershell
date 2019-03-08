@@ -1,0 +1,556 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Projekte/KanbanFlow-Powershell/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Analysis/Format-KBFDayOverview.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Analysis/Format-KBFDayOverview.html",
+          "hash": "TS4WNrgTvomZTnQXFu0DZQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Analysis/Get-KBFDayOverview.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Analysis/Get-KBFDayOverview.html",
+          "hash": "ZoehSQcBY8YIL8OpLrpkqw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Analysis/Get-KBFTimeUsageOverview.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Analysis/Get-KBFTimeUsageOverview.html",
+          "hash": "MuhWxTCYoGYGr31eqWtWSA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Analysis/Get-KBFTimeUsageTable.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Analysis/Get-KBFTimeUsageTable.html",
+          "hash": "+S4Ao6Tg3WHK7R3N/GxdhQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Base/ConvertTo-DateTime.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Base/ConvertTo-DateTime.html",
+          "hash": "x4yMa+6SZOYjRWkveYFVdw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Base/ConvertTo-KBFDateTime.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Base/ConvertTo-KBFDateTime.html",
+          "hash": "SAIvawttd97gyId1vGScRw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Base/ConvertTo-UrlParameters.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Base/ConvertTo-UrlParameters.html",
+          "hash": "rC75RKPHt/qJahUgq4lQQw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Base/Invoke-KBFApi.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Base/Invoke-KBFApi.html",
+          "hash": "M4ubxIM1Sa0sn0tsnZYZdA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Base/New-KBFAuthHeader.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Base/New-KBFAuthHeader.html",
+          "hash": "PC8bHo4aAyqCmJh0NSfddw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Base/Wait-KBFApiLimitBrake.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Base/Wait-KBFApiLimitBrake.html",
+          "hash": "2J3V7PhpuKhFJ7J7L3gRUg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Board/Clear-KBFBoard.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Board/Clear-KBFBoard.html",
+          "hash": "sxVaepN+F2VejegXMf09Xg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Board/Get-KBFBoard.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Board/Get-KBFBoard.html",
+          "hash": "FaXH6y0uYPaQzqehYbYzKQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Board/Get-KBFBoardColumn.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Board/Get-KBFBoardColumn.html",
+          "hash": "2FdDaixmLMvIO/gx5eJwIQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Board/Get-KBFUser.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Board/Get-KBFUser.html",
+          "hash": "qcZwewHBPjC8LpYO5RSP+w=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Create-Tasks/Add-KBFCollaborator.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Create-Tasks/Add-KBFCollaborator.html",
+          "hash": "9uK0rqnKDYck8EzJ1SDdFg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Create-Tasks/Add-KBFComment.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Create-Tasks/Add-KBFComment.html",
+          "hash": "5A9wW2YPTkf0Tw0bXt3G8Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Create-Tasks/Add-KBFDate.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Create-Tasks/Add-KBFDate.html",
+          "hash": "Vmu2XGf5j8SZxpzWq5Kpxw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Create-Tasks/Add-KBFLabel.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Create-Tasks/Add-KBFLabel.html",
+          "hash": "nRUZlObNnPKZuIBQKIrVsg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Create-Tasks/Add-KBFSubTask.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Create-Tasks/Add-KBFSubTask.html",
+          "hash": "hJ9HLznzyOR717HfhXfFcQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Create-Tasks/New-KBFTask.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Create-Tasks/New-KBFTask.html",
+          "hash": "RcfodyEAOgA90Jj7+UrA7A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Delete-Tasks/Remove-KBFSubTask.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Delete-Tasks/Remove-KBFSubTask.html",
+          "hash": "GuTlZd/2qRSU+OXvGuOl9A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Delete-Tasks/Remove-KBFTask.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Delete-Tasks/Remove-KBFTask.html",
+          "hash": "/Xr7JfckUAZf/SsmR8BlOw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Events/Get-KBFEvent.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Events/Get-KBFEvent.html",
+          "hash": "f8EUMNi5/R64pH+M/geEew=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Events/Get-KBFNewTask.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Events/Get-KBFNewTask.html",
+          "hash": "vGLREMffzfbQmYoQf8ijbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Get-Tasks/Get-KBFAttachment.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Get-Tasks/Get-KBFAttachment.html",
+          "hash": "WhZeVPNeCgnmSSWyDOL26Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Get-Tasks/Get-KBFCollaborator.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Get-Tasks/Get-KBFCollaborator.html",
+          "hash": "FqfQYw/GVfNWCtIA6xlHEA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Get-Tasks/Get-KBFComment.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Get-Tasks/Get-KBFComment.html",
+          "hash": "LDUxkhTfDCAxmocb0noVqg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Get-Tasks/Get-KBFDate.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Get-Tasks/Get-KBFDate.html",
+          "hash": "TG/T7lhZWHHvbIqmBFHjCg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Get-Tasks/Get-KBFLabel.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Get-Tasks/Get-KBFLabel.html",
+          "hash": "FbUGTRhIxxeGXRfIsA35jg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Get-Tasks/Get-KBFManualTimeEntry.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Get-Tasks/Get-KBFManualTimeEntry.html",
+          "hash": "ODDzbV+qVWB2hdnukp1oEw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Get-Tasks/Get-KBFSubTask.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Get-Tasks/Get-KBFSubTask.html",
+          "hash": "3XJnbfkhoGM/caxyHGNsog=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Get-Tasks/Get-KBFTask.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Get-Tasks/Get-KBFTask.html",
+          "hash": "QubwoTN8u8mUJku7xC/Icw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Get-Tasks/Get-KBFTaskByNumber.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Get-Tasks/Get-KBFTaskByNumber.html",
+          "hash": "+2328t4cbeTwBlg+fhveEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Get-Tasks/Get-KBFTimeEntryByTask.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Get-Tasks/Get-KBFTimeEntryByTask.html",
+          "hash": "q7Si5Z/wPxfkaIDRct8EUg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Get-TimeEntries/Get-KBFTimeEntry.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Get-TimeEntries/Get-KBFTimeEntry.html",
+          "hash": "JKdiY8ohOXs+CdpNUZsl9g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Html/Convert-KBFSubtasksToHtml.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Html/Convert-KBFSubtasksToHtml.html",
+          "hash": "E3bFcyzUtw5o8/2zaK1pfA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Update-Task/Update-KBFSubTask.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Update-Task/Update-KBFSubTask.html",
+          "hash": "lW/gzpJ1dhv4ji650R7qXw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/Update-Task/Update-KBFTask.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/Update-Task/Update-KBFTask.html",
+          "hash": "LMwLKGiGy4KUrwiuCJ0LpA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/index.html",
+          "hash": "64pDujR5oAQy28hGEgcpRQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "XafzHqRz59J+ZYaJSCZOzw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "y2tPhJ7oQLxigXmIZCPPgg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "8tftwVOS/uoelC7IFdD7VQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build"
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build"
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
+        "incrementalPhase": "postProcessing"
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
