@@ -11,7 +11,7 @@ function Get-KBFTaskByNumber {
         [string]$number
     )
 
-    $tasks = (Get-Task -ApiToken $apiToken -Flat) 
+    $tasks = (Get-KBFTask -ApiToken $apiToken -Flat) 
     $task = $tasks | Where-Object { $_.number.value -eq $number }
 
     $task

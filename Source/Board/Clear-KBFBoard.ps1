@@ -16,7 +16,7 @@ function Clear-KBFBoard {
     )
     
     process {
-        (Get-Task -ApiToken $ApiToken).Tasks | 
+        (Get-KBFTask -ApiToken $ApiToken).Tasks | 
             Remove-KBFTask -ApiToken $ApiToken
     }
     

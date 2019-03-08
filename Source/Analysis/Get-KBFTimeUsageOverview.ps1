@@ -24,7 +24,7 @@ function Get-KBFTimeUsageOverview {
     $from = ($FromDay).Date
     $to = ($ToIncludingDay).Date.AddDays(1).AddSeconds(-1)
     $entries = Get-TimeEntries -From $from -To $to -ApiToken $ApiToken
-    $tasks = Get-Task -ApiToken $ApiToken -Flat
+    $tasks = Get-KBFTask -ApiToken $ApiToken -Flat
 
     <# We enrich the time entries with task information that we need
        for grouping later. #>
