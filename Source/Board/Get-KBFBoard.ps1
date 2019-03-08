@@ -18,7 +18,7 @@ function Get-KBFBoard {
     )
 
 	Process {
-	    Invoke-Invoke-Invoke-KBFApi -ApiToken $ApiToken -Method "Get" -Command "board"
+	    Invoke-KBFApi -ApiToken $ApiToken -Method "Get" -Command "board"
 	}
 }
 

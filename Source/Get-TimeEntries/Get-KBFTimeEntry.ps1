@@ -20,7 +20,7 @@ function Get-KBFTimeEntry {
             limit = 2000
         }
         
-        $result = Invoke-Invoke-Invoke-KBFApi -ApiToken $ApiToken -Method "Get" -Command "time-entries" -Parameters $parameter
+        $result = Invoke-KBFApi -ApiToken $ApiToken -Method "Get" -Command "time-entries" -Parameters $parameter
 		$result.value
     }
 }

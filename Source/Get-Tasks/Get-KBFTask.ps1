@@ -23,7 +23,7 @@ function Get-KBFTask {
 	Process {
 		# The command is used to request only one task
 		if ( $PSCmdlet.ParameterSetName -eq "SingleTask" ) {
-			Invoke-Invoke-Invoke-KBFApi -ApiToken $ApiToken -Method "Get" -Command "tasks/$TaskId"
+			Invoke-KBFApi -ApiToken $ApiToken -Method "Get" -Command "tasks/$TaskId"
 			return
 		}
 
@@ -38,7 +38,7 @@ function Get-KBFTask {
 				order = $order
 			}
 
-			$tasksInColumns = Invoke-Invoke-Invoke-KBFApi -ApiToken $ApiToken -Method "Get" -Command "tasks" -Parameters $urlParameters
+			$tasksInColumns = Invoke-KBFApi -ApiToken $ApiToken -Method "Get" -Command "tasks" -Parameters $urlParameters
 
 			<#
 				This will change the structure from column.tasks to
