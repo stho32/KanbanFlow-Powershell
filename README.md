@@ -17,12 +17,19 @@ being available cross platform, there is nothing in your way to instantly start 
 
 [Get the api documentation here.](https://stho32.github.io/KanbanFlow-Powershell/docfx_project/site/articles/index.html)
 
+### Installing Kanbanflow-Powershell
+
+As administrator run the following command to install the module from the psgallery:
+```powershell
+Install-Module Kanbanflow
+```
+
 ### Example 1: Add a task to the first column of the board
 
 (You can set every attribute possible with the ui. See `help New-KBFTask` for all parameters.)
 
 ```powershell
-Import-Module "C:\Projekte\KanbanFlow-Powershell\Source\Kanbanflow.psm1"
+Import-Module Kanbanflow
 
 $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
 New-KBFTask -ApiToken $testBoardApiToken -Name "A new Task!" -ColumnId $column 
@@ -31,7 +38,7 @@ New-KBFTask -ApiToken $testBoardApiToken -Name "A new Task!" -ColumnId $column
 ### Example 2: Get a report of the current day
 
 ```powershell
-Import-Module "C:\Projekte\KanbanFlow-Powershell\Source\Kanbanflow.psm1"
+Import-Module Kanbanflow
 
 $result = Get-KBFDayOverview -ApiToken "<YOUR API TOKEN>" -Day (Get-Date).Date 
 
