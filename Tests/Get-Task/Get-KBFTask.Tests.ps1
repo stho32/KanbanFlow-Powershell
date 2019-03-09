@@ -10,13 +10,23 @@ Describe 'Get-KBFTask' {
         $taskFromBoard.name | Should -Be "Hello world of Taskoboard!"
     }
 
-    It 'can read a bunch of tasks from the board' {
+    It 'can read tasks from a column' {
+        $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
+        $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Hello world of Taskoboard!" -ColumnId $column
+
+        $tasksFromBoard = Get-KBFTask -columnName "To-do" -ApiToken $testBoardApiToken
+        $tasksFromBoard | Should -Not -BeNullOrEmpty
+        #Write-Host ($tasksFromBoard | ConvertTo-Json)
+    }
+
+    It 'can read tasks from a column' {
         $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
         $task = New-KBFTask -ApiToken $testBoardApiToken -Name "Hello world of Taskoboard!" -ColumnId $column
         $tasksFromBoard = Get-KBFTask -columnName "To-do" -ApiToken $testBoardApiToken
         $tasksFromBoard | Should -Not -BeNullOrEmpty
         #Write-Host ($tasksFromBoard | ConvertTo-Json)
     }
+
 
     It 'can read a bunch of tasks from the board and convert them into a flat structure' {
         $column = (Get-KBFBoard -ApiToken $testBoardApiToken).columns[0].uniqueId
@@ -25,4 +35,6 @@ Describe 'Get-KBFTask' {
         $tasksFromBoard | Should -Not -BeNullOrEmpty
         #Write-Host ($tasksFromBoard | ConvertTo-Json)
     }
+	
+	
 }
