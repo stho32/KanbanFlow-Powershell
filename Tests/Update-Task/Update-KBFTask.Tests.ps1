@@ -1,5 +1,5 @@
 Describe 'Update-KBFTask' {
-	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
+	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Kanbanflow
 	. $PSScriptRoot/../../credentials-for-testing.ps1
 
     It 'can change the name of a task' {

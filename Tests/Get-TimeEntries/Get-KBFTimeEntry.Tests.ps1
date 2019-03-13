@@ -1,5 +1,5 @@
 Describe 'Get-KBFTimeEntry' {
-	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
+	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Kanbanflow
 	. $PSScriptRoot/../../credentials-for-testing.ps1
 
     # Note : These unit tests do a wrong thing as they

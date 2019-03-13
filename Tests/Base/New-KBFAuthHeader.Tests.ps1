@@ -1,5 +1,5 @@
 Describe 'New-KBFAuthHeader' {
-	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
+	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Kanbanflow
 	. $PSScriptRoot/../../credentials-for-testing.ps1
 
     It 'creates this known test auth header correctly' {

@@ -1,5 +1,5 @@
 Describe 'ConvertTo-KBFDateTime' {
-	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
+	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Kanbanflow
 	. $PSScriptRoot/../../credentials-for-testing.ps1
 
     it 'converts a matching DateTime to 2013-12-31T09:00:00Z' {

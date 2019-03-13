@@ -1,5 +1,5 @@
 Describe 'Clear-KBFBoard' {
-	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
+	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Kanbanflow
 	. $PSScriptRoot/../../credentials-for-testing.ps1
 
     It 'clears a board with tasks on it' {

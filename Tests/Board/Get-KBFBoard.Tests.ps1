@@ -1,5 +1,5 @@
 Describe 'Get-KBFBoard' {
-	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
+	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Kanbanflow
 	. $PSScriptRoot/../../credentials-for-testing.ps1
     $board = Get-KBFBoard -ApiToken $testBoardApiToken
 

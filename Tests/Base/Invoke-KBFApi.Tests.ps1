@@ -1,4 +1,4 @@
-Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
+Import-Module $PSScriptRoot/../../Kanbanflow
 . $PSScriptRoot/../../credentials-for-testing.ps1
 
 Describe 'Invoke-KBFApi' {

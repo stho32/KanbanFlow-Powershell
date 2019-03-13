@@ -1,5 +1,5 @@
 Describe 'Get-KBFUser' {
-	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
+	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Kanbanflow
 	. $PSScriptRoot/../../credentials-for-testing.ps1
 
     $users = Get-KBFUser -ApiToken $testBoardApiToken

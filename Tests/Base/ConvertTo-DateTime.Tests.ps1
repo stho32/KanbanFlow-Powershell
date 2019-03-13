@@ -1,5 +1,5 @@
 Describe 'ConvertTo-DateTime' {
-	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Source/Kanbanflow.psm1
+	Remove-Module Kanbanflow*; Import-Module $PSScriptRoot/../../Kanbanflow
 	. $PSScriptRoot/../../credentials-for-testing.ps1
 
     it 'converts a string with the value of 2013-12-31T09:00:00Z to the right datetime' {
