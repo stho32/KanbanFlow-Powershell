@@ -46,7 +46,9 @@ function Invoke-KBFApi {
 						-Headers $authentication `
 						-Uri $url
 			
-			Write-Verbose ($result | ConvertTo-Json)
+			if ([bool]$result) {
+				Write-Verbose ($result | ConvertTo-Json)
+			}
 			$result
         }
 
