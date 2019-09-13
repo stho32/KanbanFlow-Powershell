@@ -22,7 +22,7 @@ function Get-KBFTimeUsageTable {
 
     $dayCount = [int]($to - $from).TotalDays
 
-    $entries = Get-TimeEntries -From $from -To $to -ApiToken $ApiToken
+    $entries = Get-KBFTimeEntry -From $from -To $to -ApiToken $ApiToken
     $tasks = Get-KBFTask -ApiToken $ApiToken -Flat
 
     <# We enrich the time entries with task information that we need
