@@ -14,8 +14,8 @@ function Get-KBFEvent {
         [DateTime]$To
     )
     
-    $fromAsString = (ConvertTo-KanbanflowDateTime $from)
-    $toAsString = (ConvertTo-KanbanflowDateTime $to)
+    $fromAsString = (ConvertTo-KBFDateTime $from)
+    $toAsString = (ConvertTo-KBFDateTime $to)
 
     $parameter = New-Object PSObject
     $parameter | Add-Member NoteProperty -Name from -Value $fromAsString

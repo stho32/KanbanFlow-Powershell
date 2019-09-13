@@ -16,7 +16,7 @@ function Get-KBFNewTask {
         [DateTime]$To
     )
     
-    $events = Get-Events -ApiToken $apiToken -From $from -To $to
+    $events = Get-KBFEvent -ApiToken $apiToken -From $from -To $to
     $tasks = (Get-KBFTask -ApiToken $apiToken -Flat)
 
     $events | ForEach-Object {
