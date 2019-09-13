@@ -25,13 +25,17 @@ function Invoke-KBFApi {
         $authentication = New-KBFAuthHeader -ApiToken $ApiToken
 
         if ( [bool]$Data ) {
-            # Remove empty properties from data
-            $Data.PSObject.Properties | 
-                Where-Object { $_.Value -eq $null } | 
-                ForEach-Object { $Data.PSObject.Properties.Remove($_.Name) }
+            $Data = Clear-KBFParameterObject $Data
 
             Write-Verbose ($Data | ConvertTo-Json)
         }
+
+        if ( [bool]$Parameters ) {
+            $Parameters = Clear-KBFParameterObject $Parameters
+
+            Write-Verbose ($Parameters | ConvertTo-Json)
+        }
+
 
         if ( $Method -eq "Get" ) {
             $url = "https://kanbanflow.com/api/v1/$Command" 

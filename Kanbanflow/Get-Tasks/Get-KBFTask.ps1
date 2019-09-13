@@ -11,12 +11,19 @@ function Get-KBFTask {
         [string]$TaskId,
         [Parameter(ParameterSetName="MultiTask")]
         [string]$columnId = "",
+        [Parameter(ParameterSetName="MultiTask")]
         [string]$columnName = "",
+        [Parameter(ParameterSetName="MultiTask")]
         [string]$columnIndex = "",
+        [Parameter(ParameterSetName="MultiTask")]
         [string]$startTaskId = "",
+        [Parameter(ParameterSetName="MultiTask")]
         [string]$startGroupingDate = "",
+        [Parameter(ParameterSetName="MultiTask")]
         [string]$limit = "",
+        [Parameter(ParameterSetName="MultiTask")]
         [string]$order = "",
+        [Parameter(ParameterSetName="MultiTask")]
         [switch]$Flat = $false
     )
 
@@ -28,7 +35,7 @@ function Get-KBFTask {
 		}
 
 		if ( $PSCmdlet.ParameterSetName -eq "MultiTask" ) {
-			$urlParameters = @{
+			$urlParameters = New-Object -TypeName PSObject -Property @{
 				columnId = $columnId
 				columnName = $columnName
 				columnIndex = $columnIndex
