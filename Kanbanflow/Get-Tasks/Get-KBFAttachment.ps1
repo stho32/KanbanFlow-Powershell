@@ -1,7 +1,7 @@
 function Get-KBFAttachment {
     <#
         .SYNOPSIS
-        Grab all attachments from a task
+        Gets all attachments from a task by id
     #>
     param (
         [Parameter(Mandatory=$true)]

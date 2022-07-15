@@ -1,8 +1,8 @@
 function Wait-KBFApiLimitBrake {
 	<#
 		.SYNOPSIS
-		Waits for a small amount of time to that 
-		we do not reach the api limit of the board as fast
+		Waits for a small amount of time so that 
+		we do not reach the api limit of the board immediately
 		
 		.EXAMPLE
 		Wait-KBFApiLimitBrake

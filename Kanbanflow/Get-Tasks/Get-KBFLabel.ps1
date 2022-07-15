@@ -1,7 +1,7 @@
 function Get-KBFLabel {
     <#
         .SYNOPSIS
-        Grab all labels from a task
+        Gets all labels from a task by id
     #>
     param (
         [Parameter(Mandatory=$true)]

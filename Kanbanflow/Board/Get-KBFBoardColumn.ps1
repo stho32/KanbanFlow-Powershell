@@ -1,7 +1,7 @@
 function Get-KBFBoardColumn {
     <#
         .SYNOPSIS
-        Grabs the unique id from a column label
+        Gets the unique id from a column label
         
         .EXAMPLE
         $columnTodo = Get-KanbanflowBoardColumnUniqueId -ApiToken $testBoardApiToken -Name "To-Do"

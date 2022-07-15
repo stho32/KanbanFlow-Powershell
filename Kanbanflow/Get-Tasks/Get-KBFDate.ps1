@@ -1,7 +1,7 @@
 function Get-KBFDate {
     <#
         .SYNOPSIS
-        Grab all dates from a task
+        Gets all dates from a task by id
     #>
     param (
         [Parameter(Mandatory=$true)]

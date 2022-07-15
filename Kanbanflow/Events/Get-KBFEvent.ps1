@@ -1,7 +1,7 @@
 function Get-KBFEvent {
     <#
         .SYNOPSIS
-        Get the event entries from a board
+        Gets the event entries from a board
         e.g. to find out which tasks are new today
     #>
     [CmdletBinding()]

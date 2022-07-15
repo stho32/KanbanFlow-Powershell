@@ -1,7 +1,7 @@
 function Add-KBFSubTask {
     <#
     .SYNOPSIS
-        Create a subtask
+        Creates a subtask
     #>
     param (
         [Parameter(Mandatory=$true)]

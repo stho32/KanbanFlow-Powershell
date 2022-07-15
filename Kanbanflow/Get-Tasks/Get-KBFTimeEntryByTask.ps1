@@ -1,7 +1,7 @@
 function Get-KBFTimeEntryByTask {
     <#
         .SYNOPSIS
-        Grab all time-entries from a task
+        Gets all time-entries from a task by id
     #>
     param (
         [Parameter(Mandatory=$true)]

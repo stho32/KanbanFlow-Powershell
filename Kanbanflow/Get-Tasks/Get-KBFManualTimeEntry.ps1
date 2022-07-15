@@ -1,7 +1,7 @@
 function Get-KBFManualTimeEntry {
     <#
         .SYNOPSIS
-        Grab all manual-time-entries from a task
+        Gets all manual-time-entries from a task by id
     #>
     param (
         [Parameter(Mandatory=$true)]

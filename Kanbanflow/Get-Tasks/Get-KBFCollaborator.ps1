@@ -1,7 +1,7 @@
 function Get-KBFCollaborator {
     <#
         .SYNOPSIS
-        Grab all collaborators from a task
+        Gets all collaborators from a task by id
     #>
     param (
         [Parameter(Mandatory=$true)]

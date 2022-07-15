@@ -1,7 +1,7 @@
 function Add-KBFComment {
     <#
         .SYNOPSIS
-        Add a collaborator to a card
+        Adds a comment to a card
     #>
     param (
         [Parameter(Mandatory=$true)]

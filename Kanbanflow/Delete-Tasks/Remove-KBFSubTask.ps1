@@ -1,7 +1,7 @@
 function Remove-KBFSubTask {
     <#
         .SYNOPSIS
-        Delete a subtask by name or id
+        Deletes a subtask by name or id
     #>
     param (
         [Parameter(Mandatory=$true)]

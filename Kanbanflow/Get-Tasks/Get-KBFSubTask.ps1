@@ -1,7 +1,7 @@
 function Get-KBFSubTask {
     <#
         .SYNOPSIS
-        Grab all subtasks from a task
+        Gets all subtasks from a task by id
     #>
     param (
         [Parameter(Mandatory=$true)]

@@ -1,10 +1,10 @@
 function Invoke-KBFApi {
     <#
         .SYNOPSIS
-        Issues a get command to the kanbanflow api
+        Sends a HTTP Request to the Kanbanflow API 
 
         .DESCRIPTION
-        The Kanbanflow API accepts the following command types: GET, POST and DELETE.
+        The Kanbanflow API accepts the following HTTP Methods: GET, POST and DELETE.
         This function encapsulates everything that is needed for a valid request.
     #>
     [CmdletBinding()]
@@ -40,7 +40,7 @@ function Invoke-KBFApi {
         if ( $Method -eq "Get" ) {
             $url = "https://kanbanflow.com/api/v1/$Command" 
             
-            if ($Parameters -ne $null) {
+            if ($null -ne $Parameters) {
                 $ParametersEncoded = ConvertTo-UrlParameters $Parameters -StartWithQuestionmark 
                 $url = $url + $ParametersEncoded
             }
@@ -57,7 +57,7 @@ function Invoke-KBFApi {
         }
 
         if ( $Method -eq "Post" ) {
-            if ($Data -eq $null) {
+            if ($null -eq $Data) {
                 throw "You have invoked a post command but did not pass any data! Please add -Data <PSObject> to add a data load to the command."
             }
 

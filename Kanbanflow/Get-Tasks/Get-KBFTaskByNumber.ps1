@@ -1,7 +1,7 @@
 function Get-KBFTaskByNumber {
     <#
         .SYNOPSIS
-    Get Task by its number 
+    Gets a Task by its number 
     #>
     [CmdletBinding()]
     param (
