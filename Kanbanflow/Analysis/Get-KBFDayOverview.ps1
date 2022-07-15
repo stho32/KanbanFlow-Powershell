@@ -1,7 +1,7 @@
 function Get-KBFDayOverview {
     <#
         .SYNOPSIS
-        Grabs all time entries, groups them as report
+        Gets all time entries and groups them as report
 
         .DESCRIPTION
         Sometimes you have to report what your day was like.

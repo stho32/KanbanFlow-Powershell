@@ -1,7 +1,7 @@
 function Update-KBFTask {
     <#
         .SYNOPSIS
-        Update the name of a task
+        Updates the name of a task by id
 
         .DESCRIPTION
         Update a task name on a kanban board by taskId

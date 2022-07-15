@@ -1,7 +1,7 @@
 function Add-KBFLabel {
     <#
         .SYNOPSIS
-        Create a label
+        Creates a label
     #>
     param (
         [Parameter(Mandatory=$true)]

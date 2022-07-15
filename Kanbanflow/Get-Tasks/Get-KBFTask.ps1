@@ -1,7 +1,7 @@
 function Get-KBFTask {
     <#
         .SYNOPSIS
-        Get a task by its ID
+        Gets a task by its ID
     #>
     [CmdletBinding()]
     param (

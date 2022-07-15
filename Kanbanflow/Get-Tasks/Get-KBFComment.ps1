@@ -1,7 +1,7 @@
 function Get-KBFComment {
     <#
         .SYNOPSIS
-        Get comments of a task by their task id
+        Gets comments of a task by their task id
     #>
     [CmdletBinding()]
     param (

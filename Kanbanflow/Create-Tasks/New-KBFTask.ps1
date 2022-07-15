@@ -1,7 +1,7 @@
 function New-KBFTask {
     <#
         .SYNOPSIS
-        Creates a new on a Kanbanflow board
+        Creates a new Task on a Kanbanflow board
 
         .EXAMPLE
         New-KBFTask -Name "Hello world" -ColumnId $todoColumn -ApiToken $apiToken

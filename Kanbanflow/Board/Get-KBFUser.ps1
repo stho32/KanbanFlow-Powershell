@@ -1,7 +1,7 @@
 function Get-KBFUser {
     <#
         .SYNOPSIS
-        Grabs the list of users from the board
+        Gets the list of users from the board
         
         .EXAMPLE
         Get-KBFUser -ApiToken $apiToken

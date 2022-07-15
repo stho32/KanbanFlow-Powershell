@@ -1,7 +1,7 @@
 function Add-KBFDate {
     <#
         .SYNOPSIS
-        Create a Date
+        Creates a Date
     #>
     param (
         [Parameter(Mandatory=$true)]
