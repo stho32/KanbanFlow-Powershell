@@ -1,3 +1,4 @@
+#Requires -Version 5.1
 <#
     KANBANFLOW POWERSHELL MODULE
 
